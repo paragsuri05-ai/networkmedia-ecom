@@ -16,16 +16,16 @@ margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:'Poppins',sans-serif;
-scroll-behavior:smooth;
 }
 
 body{
-background:#f5f8fc;
-color:#222;
+background:#0b1220;
+color:white;
 line-height:1.7;
+overflow-x:hidden;
 }
 
-/* ================= NAVBAR (GLASS EFFECT) ================= */
+/* ================= NAVBAR ================= */
 nav{
 position:fixed;
 top:0;
@@ -33,17 +33,15 @@ width:100%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:18px 70px;
-color:white;
-z-index:1000;
-
-background:rgba(15,23,42,.75);
+padding:20px 80px;
+background:rgba(10,15,30,.7);
 backdrop-filter:blur(10px);
+z-index:1000;
 }
 
 nav ul{
 display:flex;
-gap:30px;
+gap:35px;
 list-style:none;
 }
 
@@ -51,58 +49,50 @@ nav a{
 color:white;
 text-decoration:none;
 font-size:14px;
-transition:.3s;
+opacity:.8;
 }
 
 nav a:hover{
-color:#00c3ff;
+color:#00d4ff;
 }
 
-/* ================= HERO ================= */
+/* ================= HERO SPLIT ================= */
 .hero{
 height:100vh;
 display:flex;
 align-items:center;
-justify-content:center;
-text-align:center;
-color:white;
-padding:20px;
+justify-content:space-between;
+padding:0 10%;
+gap:60px;
 
 background:
-linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
-url('images/hero.jpg');
-
-background-size:cover;
-background-position:center;
-position:relative;
-overflow:hidden;
+radial-gradient(circle at 10% 20%, #00d4ff33, transparent 40%),
+radial-gradient(circle at 80% 70%, #0066ff33, transparent 40%);
 }
 
-.hero h1{
+.hero-text{
+flex:1;
+}
+
+.hero-text h1{
 font-size:64px;
-margin-bottom:20px;
+font-weight:700;
+margin-bottom:25px;
 }
 
-.hero p{
-max-width:900px;
-margin:auto;
-opacity:.95;
+.hero-text p{
+opacity:.8;
+max-width:600px;
 }
 
-/* floating animation */
-.hero::after{
-content:"";
-position:absolute;
-width:600px;
-height:600px;
-background:radial-gradient(#00c3ff33,transparent);
-top:-200px;
-left:-200px;
-animation:float 10s infinite alternate;
+.hero-img{
+flex:1;
 }
 
-@keyframes float{
-to{transform:translate(200px,200px);}
+.hero-img img{
+width:100%;
+border-radius:18px;
+box-shadow:0 20px 60px rgba(0,0,0,.6);
 }
 
 /* ================= BUTTON ================= */
@@ -110,8 +100,8 @@ to{transform:translate(200px,200px);}
 display:inline-block;
 margin-top:30px;
 padding:14px 32px;
-border-radius:8px;
-background:linear-gradient(45deg,#00c3ff,#007bff);
+border-radius:10px;
+background:linear-gradient(45deg,#00d4ff,#007bff);
 color:white;
 text-decoration:none;
 font-weight:600;
@@ -119,119 +109,117 @@ font-weight:600;
 
 /* ================= SECTION ================= */
 .section{
-padding:120px 70px;
+padding:120px 10%;
 text-align:center;
 }
 
-.light{background:white;}
-.dark{background:#0f172a;color:white;}
-
-h2{
-font-size:38px;
+.section h2{
+font-size:42px;
 margin-bottom:25px;
 }
 
 /* ================= SERVICES ================= */
-.grid{
+.services{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:30px;
-margin-top:50px;
+margin-top:60px;
 }
 
-.card{
+.service{
+background:#111a2e;
 padding:40px;
-border-radius:14px;
-background:#1e293b;
-color:white;
+border-radius:18px;
 transition:.4s;
 text-decoration:none;
+color:white;
 }
 
-.card:hover{
-transform:translateY(-10px);
-background:linear-gradient(45deg,#00c3ff,#007bff);
+.service:hover{
+transform:translateY(-12px);
+background:linear-gradient(45deg,#00d4ff,#0066ff);
+}
+
+.service h3{
+margin-top:10px;
 }
 
 /* ================= STATS ================= */
 .stats{
 display:flex;
-justify-content:space-around;
-flex-wrap:wrap;
-gap:40px;
+justify-content:center;
+gap:80px;
 margin-top:60px;
 }
 
 .stat h3{
-font-size:44px;
-color:#00c3ff;
+font-size:46px;
+color:#00d4ff;
 }
 
-/* ================= CLIENT LOGOS ================= */
-.logos{
+/* ================= IMAGE BLOCK ================= */
+.image-block{
 display:flex;
-flex-wrap:wrap;
-gap:50px;
-justify-content:center;
-margin-top:40px;
-opacity:.7;
+align-items:center;
+gap:60px;
+text-align:left;
 }
 
-.logos img{
-height:40px;
+.image-block img{
+width:50%;
+border-radius:20px;
 }
 
-/* ================= TESTIMONIAL ================= */
-.testimonial{
-max-width:700px;
-margin:auto;
-font-style:italic;
+.image-block div{
+flex:1;
 }
 
 /* ================= CTA ================= */
 .cta{
-background:linear-gradient(45deg,#00c3ff,#007bff);
-color:white;
+background:linear-gradient(45deg,#00d4ff,#0066ff);
 padding:80px 20px;
 text-align:center;
 }
 
 /* ================= FOOTER ================= */
 footer{
-background:#111;
-color:#aaa;
+background:#050a14;
+padding:30px;
 text-align:center;
-padding:25px;
-}
-
-/* ================= ANIMATION ================= */
-.reveal{
-opacity:0;
-transform:translateY(40px);
-transition:.8s;
-}
-
-.reveal.show{
-opacity:1;
-transform:translateY(0);
+opacity:.6;
 }
 
 /* ================= RESPONSIVE ================= */
-@media(max-width:768px){
-.hero h1{font-size:42px;}
-.section{padding:100px 25px;}
-nav{padding:15px 25px;}
+@media(max-width:900px){
+.hero{
+flex-direction:column;
+text-align:center;
+}
+
+.image-block{
+flex-direction:column;
+text-align:center;
+}
+
+.image-block img{
+width:100%;
+}
+
+.stats{
+flex-direction:column;
+gap:30px;
+}
 }
 
 </style>
 </head>
-
 
 <body>
 
 <!-- NAVBAR -->
 <nav>
 <strong>Network Media Inc.</strong>
+
 <ul>
 <li><a href="#home">Home</a></li>
 <li><a href="#about">About</a></li>
@@ -241,90 +229,105 @@ nav{padding:15px 25px;}
 </nav>
 
 
+
 <!-- HERO -->
 <section id="home" class="hero">
-<div>
+
+<div class="hero-text">
 <h1>Expand Globally. Grow Faster.</h1>
-<p>Helping brands scale across Amazon, Walmart, Flipkart & global marketplaces.</p>
+
+<p>
+Network Media helps brands scale across Amazon, Walmart, Flipkart, Myntra, AJIO,
+Nykaa, Blinkit, Zepto & more.
+</p>
+
 <a href="#services" class="btn">Explore Services</a>
 </div>
+
+<div class="hero-img">
+<img src="images/hero.jpg">
+</div>
+
 </section>
+
 
 
 <!-- ABOUT -->
-<section id="about" class="section light reveal">
+<section id="about" class="section">
 <h2>About Us</h2>
-<p>We provide complete marketplace solutions from logistics to marketing so you can grow globally without stress.</p>
-</section>
 
+<p>
+From logistics and taxes to localization and marketing,
+we provide end-to-end marketplace solutions so brands can grow globally without complexity.
+</p>
 
-<!-- STATS -->
-<section class="section reveal">
 <div class="stats">
-<div class="stat"><h3>150+</h3><p>Brands Served</p></div>
+<div class="stat"><h3>150+</h3><p>Brands</p></div>
 <div class="stat"><h3>25+</h3><p>Marketplaces</p></div>
-<div class="stat"><h3>5x</h3><p>Avg Growth</p></div>
+<div class="stat"><h3>5x</h3><p>Growth</p></div>
 </div>
 </section>
+
 
 
 <!-- SERVICES -->
-<section id="services" class="section dark">
+<section id="services" class="section">
 <h2>What We Do</h2>
 
-<div class="grid reveal">
-<a href="#" class="card">📦 Marketplace Management</a>
-<a href="#" class="card">📈 Performance Marketing</a>
-<a href="#" class="card">📊 Business Analysis</a>
-<a href="#" class="card">🚀 Strategy & Growth</a>
+<div class="services">
+
+<a href="#" class="service">
+📦
+<h3>Marketplace Management</h3>
+</a>
+
+<a href="#" class="service">
+📈
+<h3>Performance Marketing</h3>
+</a>
+
+<a href="#" class="service">
+📊
+<h3>Business Analysis</h3>
+</a>
+
+<a href="#" class="service">
+🚀
+<h3>Growth Strategy</h3>
+</a>
+
 </div>
 </section>
 
 
-<!-- CLIENT LOGOS -->
-<section class="section light reveal">
-<h2>Trusted By Brands</h2>
-<div class="logos">
-<img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg">
-<img src="https://upload.wikimedia.org/wikipedia/commons/1/14/Flipkart_logo.svg">
-<img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Walmart_logo.svg">
-</div>
-</section>
 
+<!-- IMAGE SECTION -->
+<section class="section image-block">
+<img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1200">
 
-<!-- TESTIMONIAL -->
-<section class="section reveal">
-<h2>Testimonials</h2>
-<p class="testimonial">
-“Network Media helped us scale 5x in just 8 months. Incredible team and results-driven approach.”
+<div>
+<h2>We Take The Lead in Commerce</h2>
+<p>
+Data-driven decisions, smart advertising, and seamless operations
+help your brand win in competitive marketplaces.
 </p>
+</div>
 </section>
+
 
 
 <!-- CTA -->
-<section class="cta">
-<h2>Ready to Grow Your Brand?</h2>
-<a href="mailto:network.media@hotmail.com" class="btn">Let's Talk</a>
+<section id="reach" class="cta">
+<h2>Let's Start a Partnership</h2>
+<p>+91 9711660117 | network.media@hotmail.com</p>
+<a href="mailto:network.media@hotmail.com" class="btn">Contact Now</a>
 </section>
 
 
-<!-- FOOTER -->
+
 <footer>
-© 2026 Network Media Inc. | All Rights Reserved
+© 2026 Network Media Inc. All rights reserved.
 </footer>
-
-
-<script>
-const reveals=document.querySelectorAll('.reveal');
-
-window.addEventListener('scroll',()=>{
-reveals.forEach(el=>{
-if(el.getBoundingClientRect().top < window.innerHeight-80){
-el.classList.add('show');
-}
-});
-});
-</script>
 
 </body>
 </html>
