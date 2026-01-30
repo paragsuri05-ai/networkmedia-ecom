@@ -20,12 +20,12 @@ scroll-behavior:smooth;
 }
 
 body{
-background:#f4f7fb;
+background:#f5f8fc;
 color:#222;
 line-height:1.7;
 }
 
-/* ================= NAVBAR ================= */
+/* ================= NAVBAR (GLASS EFFECT) ================= */
 nav{
 position:fixed;
 top:0;
@@ -34,9 +34,11 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:18px 70px;
-background:#0f172a;
 color:white;
 z-index:1000;
+
+background:rgba(15,23,42,.75);
+backdrop-filter:blur(10px);
 }
 
 nav ul{
@@ -68,15 +70,16 @@ padding:20px;
 
 background:
 linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
-url('images/hero.jpg');   /* PUT IMAGE HERE */
+url('images/hero.jpg');
 
 background-size:cover;
 background-position:center;
+position:relative;
+overflow:hidden;
 }
 
 .hero h1{
-font-size:62px;
-font-weight:700;
+font-size:64px;
 margin-bottom:20px;
 }
 
@@ -84,6 +87,22 @@ margin-bottom:20px;
 max-width:900px;
 margin:auto;
 opacity:.95;
+}
+
+/* floating animation */
+.hero::after{
+content:"";
+position:absolute;
+width:600px;
+height:600px;
+background:radial-gradient(#00c3ff33,transparent);
+top:-200px;
+left:-200px;
+animation:float 10s infinite alternate;
+}
+
+@keyframes float{
+to{transform:translate(200px,200px);}
 }
 
 /* ================= BUTTON ================= */
@@ -94,13 +113,8 @@ padding:14px 32px;
 border-radius:8px;
 background:linear-gradient(45deg,#00c3ff,#007bff);
 color:white;
-font-weight:600;
 text-decoration:none;
-transition:.3s;
-}
-
-.btn:hover{
-transform:translateY(-3px);
+font-weight:600;
 }
 
 /* ================= SECTION ================= */
@@ -109,23 +123,12 @@ padding:120px 70px;
 text-align:center;
 }
 
-.light{
-background:white;
-}
-
-.dark{
-background:#0f172a;
-color:white;
-}
+.light{background:white;}
+.dark{background:#0f172a;color:white;}
 
 h2{
 font-size:38px;
 margin-bottom:25px;
-}
-
-.section p{
-max-width:900px;
-margin:auto;
 }
 
 /* ================= SERVICES ================= */
@@ -137,25 +140,60 @@ margin-top:50px;
 }
 
 .card{
-padding:35px;
+padding:40px;
 border-radius:14px;
 background:#1e293b;
 color:white;
-font-weight:600;
+transition:.4s;
 text-decoration:none;
-box-shadow:0 10px 25px rgba(0,0,0,.25);
-transition:.35s;
 }
 
 .card:hover{
-transform:translateY(-10px) scale(1.05);
+transform:translateY(-10px);
 background:linear-gradient(45deg,#00c3ff,#007bff);
 }
 
-/* ================= CONTACT ================= */
-.contact-box{
-font-size:18px;
-margin-top:20px;
+/* ================= STATS ================= */
+.stats{
+display:flex;
+justify-content:space-around;
+flex-wrap:wrap;
+gap:40px;
+margin-top:60px;
+}
+
+.stat h3{
+font-size:44px;
+color:#00c3ff;
+}
+
+/* ================= CLIENT LOGOS ================= */
+.logos{
+display:flex;
+flex-wrap:wrap;
+gap:50px;
+justify-content:center;
+margin-top:40px;
+opacity:.7;
+}
+
+.logos img{
+height:40px;
+}
+
+/* ================= TESTIMONIAL ================= */
+.testimonial{
+max-width:700px;
+margin:auto;
+font-style:italic;
+}
+
+/* ================= CTA ================= */
+.cta{
+background:linear-gradient(45deg,#00c3ff,#007bff);
+color:white;
+padding:80px 20px;
+text-align:center;
 }
 
 /* ================= FOOTER ================= */
@@ -180,26 +218,20 @@ transform:translateY(0);
 
 /* ================= RESPONSIVE ================= */
 @media(max-width:768px){
-.hero h1{
-font-size:40px;
-}
-nav{
-padding:15px 25px;
-}
-.section{
-padding:100px 25px;
-}
+.hero h1{font-size:42px;}
+.section{padding:100px 25px;}
+nav{padding:15px 25px;}
 }
 
 </style>
 </head>
 
+
 <body>
 
-<!-- ================= NAVBAR ================= -->
+<!-- NAVBAR -->
 <nav>
-<div><strong>Network Media Inc.</strong></div>
-
+<strong>Network Media Inc.</strong>
 <ul>
 <li><a href="#home">Home</a></li>
 <li><a href="#about">About</a></li>
@@ -209,95 +241,74 @@ padding:100px 25px;
 </nav>
 
 
-<!-- ================= HERO ================= -->
+<!-- HERO -->
 <section id="home" class="hero">
 <div>
-<h1>Network Media Inc.</h1>
-
-<p>
-Network Media helps brands expand globally, faster. We help you reach India,
-North America, Europe, Middle East and Asia markets across Amazon, Walmart,
-Flipkart, Myntra, AJIO, Nykaa, Blinkit, Zepto, Instamart & BigBasket.
-</p>
-
+<h1>Expand Globally. Grow Faster.</h1>
+<p>Helping brands scale across Amazon, Walmart, Flipkart & global marketplaces.</p>
 <a href="#services" class="btn">Explore Services</a>
 </div>
 </section>
 
 
-<!-- ================= ABOUT ================= -->
+<!-- ABOUT -->
 <section id="about" class="section light reveal">
-
 <h2>About Us</h2>
-
-<p>
-Our team helps brands overcome every challenge of going global. From logistics,
-taxes, translations and localization to complete marketplace operations,
-we provide a hassle-free full-service solution. We are passionate about eCommerce
-and committed to helping you Launch, Grow & Optimize your business.
-Most of our clients come through referrals — a testament to our results.
-</p>
-
+<p>We provide complete marketplace solutions from logistics to marketing so you can grow globally without stress.</p>
 </section>
 
 
-<!-- ================= WHAT WE DO ================= -->
-<section id="services" class="section dark">
+<!-- STATS -->
+<section class="section reveal">
+<div class="stats">
+<div class="stat"><h3>150+</h3><p>Brands Served</p></div>
+<div class="stat"><h3>25+</h3><p>Marketplaces</p></div>
+<div class="stat"><h3>5x</h3><p>Avg Growth</p></div>
+</div>
+</section>
 
+
+<!-- SERVICES -->
+<section id="services" class="section dark">
 <h2>What We Do</h2>
 
 <div class="grid reveal">
-
-<a href="#marketplace" class="card">📦 Marketplace Management</a>
-<a href="#marketing" class="card">📈 Performance Marketing</a>
-<a href="#analysis" class="card">📊 Business Analysis</a>
-<a href="#strategy" class="card">🚀 Strategy & Growth</a>
-
+<a href="#" class="card">📦 Marketplace Management</a>
+<a href="#" class="card">📈 Performance Marketing</a>
+<a href="#" class="card">📊 Business Analysis</a>
+<a href="#" class="card">🚀 Strategy & Growth</a>
 </div>
-
 </section>
 
 
-<!-- ================= CLICKABLE DETAILS ================= -->
-
-<section id="marketplace" class="section light reveal">
-<h2>Marketplace Management</h2>
-<p>Complete listing setup, catalog optimization, account handling, operations and scaling across marketplaces.</p>
-</section>
-
-<section id="marketing" class="section light reveal">
-<h2>Performance Marketing</h2>
-<p>Amazon PPC, Flipkart Ads, Google & Meta advertising with ROI-focused growth strategies.</p>
-</section>
-
-<section id="analysis" class="section light reveal">
-<h2>Business Analysis</h2>
-<p>Sales analytics, dashboards, competitor research and actionable insights for faster decisions.</p>
-</section>
-
-<section id="strategy" class="section light reveal">
-<h2>Strategy & Growth</h2>
-<p>Launch plans, international expansion and full digital commerce consulting.</p>
-</section>
-
-
-<!-- ================= CONTACT ================= -->
-<section id="reach" class="section dark reveal">
-
-<h2>Let's Start a Partnership</h2>
-
-<p>Ready to accelerate your commerce growth? Share your brand vision with us.</p>
-
-<div class="contact-box">
-📞 +91 9711660117<br>
-📧 network.media@hotmail.com
+<!-- CLIENT LOGOS -->
+<section class="section light reveal">
+<h2>Trusted By Brands</h2>
+<div class="logos">
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg">
+<img src="https://upload.wikimedia.org/wikipedia/commons/1/14/Flipkart_logo.svg">
+<img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Walmart_logo.svg">
 </div>
-
-<a href="mailto:network.media@hotmail.com" class="btn">Contact Now</a>
-
 </section>
 
 
+<!-- TESTIMONIAL -->
+<section class="section reveal">
+<h2>Testimonials</h2>
+<p class="testimonial">
+“Network Media helped us scale 5x in just 8 months. Incredible team and results-driven approach.”
+</p>
+</section>
+
+
+<!-- CTA -->
+<section class="cta">
+<h2>Ready to Grow Your Brand?</h2>
+<a href="mailto:network.media@hotmail.com" class="btn">Let's Talk</a>
+</section>
+
+
+<!-- FOOTER -->
 <footer>
 © 2026 Network Media Inc. | All Rights Reserved
 </footer>
