@@ -149,72 +149,60 @@ backdrop-filter:blur(6px);
 
 /* LEFT TABS */
 .services-tabs{
-width:320px;
-flex-shrink:0;
-display:flex;
-flex-direction:column;
-gap:18px;
+  width:320px;
+  flex-shrink:0;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
 }
 
 /* TAB CARD */
 .tab{
   padding:18px 22px;
-  border-radius:12px;
-
-  background:rgba(255,255,255,0.04);
-  border:1px solid rgba(255,255,255,0.12);
-
+  border-radius:14px;
+  background:rgba(255,255,255,0.05); /* subtle dark */
+  border:1px solid rgba(255,255,255,0.15);
   cursor:pointer;
-  transition:all .3s ease;
-
-  color:#cbd5e1;
+  transition:.35s;
+  color:#e2e8f0;
   font-weight:500;
   font-size:15px;
-
-  position:relative;
 }
 
+/* Hover Effect */
 .tab:hover{
-  background:rgba(255,255,255,0.08);
-  transform:translateX(4px);
+  transform:translateX(6px);
+  border-color:#00c3ff;
+  box-shadow:0 0 12px rgba(0,195,255,0.2);
 }
 
-.tab::before{
-  content:"";
-  position:absolute;
-  left:0;
-  top:0;
-  height:100%;
-  width:4px;
-  border-radius:4px;
-  background:transparent;
-  transition:.3s;
-}
-
+/* Active Tab - subtle highlight */
 .tab.active{
-  background:rgba(255,255,255,0.10);
+  background:rgba(255,255,255,0.12); /* slightly lighter */
+  border-color:#00c3ff; /* subtle glow */
   color:white;
-  border-color:rgba(255,255,255,0.25);
+  font-weight:600;
+  box-shadow:0 0 15px rgba(0,195,255,0.25);
 }
 
-.tab.active::before{
-  background:#00d4ff;
+/* RIGHT CONTENT CARD */
+.services-content{
+  flex:1;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.15);
+  border-radius:18px;
+  padding:45px;
+  text-align:left;
+  transition:all 0.3s ease;
 }
 
-/* content animation */
 .content{
   display:none;
-  opacity:0;
-  transform:translateY(8px);
-  transition:all .35s ease;
 }
 
 .content.active{
   display:block;
-  opacity:1;
-  transform:translateY(0);
 }
-
 
 /* ================= STATS ================= */
 .stats{
@@ -435,6 +423,7 @@ document.getElementById(tab.dataset.tab).classList.add('active');
 
 </body>
 </html>
+
 
 
 
