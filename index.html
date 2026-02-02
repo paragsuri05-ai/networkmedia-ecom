@@ -158,57 +158,63 @@ gap:18px;
 
 /* TAB CARD */
 .tab{
-padding:18px 22px;
-border-radius:14px;
+  padding:18px 22px;
+  border-radius:12px;
 
-background:rgba(255,255,255,0.05);
-border:1px solid rgba(255,255,255,0.15);
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.12);
 
-cursor:pointer;
-transition:.35s;
+  cursor:pointer;
+  transition:all .3s ease;
 
-color:#e2e8f0;
+  color:#cbd5e1;
+  font-weight:500;
+  font-size:15px;
+
+  position:relative;
 }
 
-/* Hover */
 .tab:hover{
-transform:translateX(6px);
-border-color:#00c3ff;
-box-shadow:0 0 15px rgba(0,195,255,0.25);
+  background:rgba(255,255,255,0.08);
+  transform:translateX(4px);
 }
 
-/* Active */
+.tab::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  height:100%;
+  width:4px;
+  border-radius:4px;
+  background:transparent;
+  transition:.3s;
+}
+
 .tab.active{
-background:linear-gradient(135deg,#00c3ff,#0088ff);
-color:black;
-font-weight:600;
-
-box-shadow:
-0 0 20px rgba(0,195,255,.5),
-0 0 40px rgba(0,195,255,.2);
+  background:rgba(255,255,255,0.10);
+  color:white;
+  border-color:rgba(255,255,255,0.25);
 }
 
-
-/* RIGHT CONTENT CARD */
-.services-content{
-flex:1;
-
-background:rgba(255,255,255,0.05);
-border:1px solid rgba(255,255,255,0.15);
-
-border-radius:18px;
-padding:45px;
-
-text-align:left;
+.tab.active::before{
+  background:#00d4ff;
 }
 
+/* content animation */
 .content{
-display:none;
+  display:none;
+  opacity:0;
+  transform:translateY(8px);
+  transition:all .35s ease;
 }
 
 .content.active{
-display:block;
+  display:block;
+  opacity:1;
+  transform:translateY(0);
 }
+
 
 /* ================= STATS ================= */
 .stats{
@@ -429,6 +435,7 @@ document.getElementById(tab.dataset.tab).classList.add('active');
 
 </body>
 </html>
+
 
 
 
