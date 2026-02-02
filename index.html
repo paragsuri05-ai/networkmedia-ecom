@@ -23,38 +23,54 @@ background:#0b1220;
 color:white;
 line-height:1.7;
 overflow-x:hidden;
+padding-top:110px;   /* ⭐ NAVBAR space fix */
 }
 
-/* ================= NAVBAR ================= */
+
+/* ================= GOBBLE STYLE NAVBAR ================= */
 nav{
 position:fixed;
-top:0;
-width:100%;
+top:22px;
+left:50%;
+transform:translateX(-50%);
+
 display:flex;
-justify-content:space-between;
 align-items:center;
-padding:20px 80px;
-background:rgba(10,15,30,.7);
-backdrop-filter:blur(10px);
+justify-content:center;
+gap:70px;
+
+padding:14px 40px;
+
+border-radius:50px;
+
+background:rgba(15,23,42,0.75);
+backdrop-filter:blur(12px);
+
+border:1px solid rgba(255,255,255,0.15);
+box-shadow:0 10px 40px rgba(0,0,0,0.6);
+
+width:max-content;
 z-index:1000;
 }
-
+/* NAV LINKS */
 nav ul{
 display:flex;
-gap:35px;
+gap:40px;
 list-style:none;
+align-items:center;
 }
 
 nav a{
-color:white;
 text-decoration:none;
-font-size:14px;
-opacity:.8;
+color:#e2e8f0;
+font-weight:500;
+transition:.3s;
 }
 
 nav a:hover{
 color:#00d4ff;
 }
+
 
 /* ================= HERO SPLIT ================= */
 .hero{
@@ -280,7 +296,9 @@ gap:30px;
 
 <!-- NAVBAR -->
 <nav>
-<strong>Network Media Inc.</strong>
+<strong style="font-size:18px;font-weight:700;letter-spacing:.5px;">
+Network Media Inc.
+</strong>
 
 <ul>
 <li><a href="#home">Home</a></li>
@@ -423,6 +441,7 @@ document.getElementById(tab.dataset.tab).classList.add('active');
 
 </body>
 </html>
+
 
 
 
