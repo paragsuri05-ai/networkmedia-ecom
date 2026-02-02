@@ -348,22 +348,18 @@ Our team can help you overcome any challenges that come with going global.
 <div class="services">
 
 <a href="#" class="service">
-📦
 <h3>Marketplace Management</h3>
 </a>
 
 <a href="#" class="service">
-📈
 <h3>Performance Marketing</h3>
 </a>
 
 <a href="#" class="service">
-📊
 <h3>Business Analysis</h3>
 </a>
 
 <a href="#" class="service">
-🚀
 <h3>Growth Strategy</h3>
 </a>
 
@@ -394,8 +390,28 @@ help your brand win in competitive marketplaces.
 © 2026 Network Media Inc. All rights reserved.
 </footer>
 
+   
+   <!-- ================= SCRIPT ================= -->
+<script>
+
+const tabs=document.querySelectorAll('.tab');
+const contents=document.querySelectorAll('.content');
+
+tabs.forEach(tab=>{
+tab.addEventListener('click',()=>{
+tabs.forEach(t=>t.classList.remove('active'));
+contents.forEach(c=>c.classList.remove('active'));
+
+tab.classList.add('active');
+document.getElementById(tab.dataset.tab).classList.add('active');
+});
+});
+
+</script>
+
 </body>
 </html>
+
 
 
 
