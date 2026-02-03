@@ -323,6 +323,70 @@ flex-direction:column;
 gap:30px;
 }
 }
+   /* ================= TRUSTED BRANDS ================= */
+
+.trusted{
+padding:120px 10%;
+text-align:center;
+}
+
+.trusted h2{
+font-size:32px;
+font-weight:600;
+margin-bottom:40px;
+}
+
+.trusted-box{
+padding:50px 40px;
+border-radius:28px;
+
+background:rgba(255,255,255,0.04);
+border:1px solid rgba(255,255,255,0.12);
+
+backdrop-filter:blur(8px);
+box-shadow:0 20px 80px rgba(0,0,0,.45);
+}
+
+/* LOGOS ROW */
+.logos{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+align-items:center;
+gap:60px;
+margin-bottom:40px;
+}
+
+/* LOGO STYLE */
+.logos img{
+height:38px;
+filter:brightness(0) invert(1);
+opacity:.75;
+transition:.3s;
+}
+
+.logos img:hover{
+opacity:1;
+transform:scale(1.08);
+}
+
+/* BUTTON */
+.trusted-btn{
+display:inline-block;
+padding:14px 28px;
+border-radius:30px;
+
+border:1px solid rgba(255,255,255,.25);
+text-decoration:none;
+color:#e2e8f0;
+
+transition:.3s;
+}
+
+.trusted-btn:hover{
+background:rgba(255,255,255,.08);
+}
+
 
 
 </style>
@@ -389,6 +453,30 @@ Our team can help you overcome any challenges that come with going global.
 <div class="stat"><h3>5x</h3><p>Growth</p></div>
 </div>
 </section>
+
+   <!-- ================= TRUSTED BRANDS ================= -->
+<section class="trusted">
+
+<h2>
+Trusted By <span class="highlight">350+</span> Leading Brands Worldwide
+</h2>
+
+<div class="trusted-box">
+
+<div class="logos">
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/08/L%27Or%C3%A9al_logo.svg">
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Nivea_logo.svg">
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/36/Dabur_Logo.svg">
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/30/Reckitt_logo.svg">
+<img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Philips_logo_new.svg">
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Dr_Reddy%27s_Laboratories_logo.svg">
+</div>
+
+<a href="#" class="trusted-btn">See what we unlocked for them →</a>
+
+</div>
+</section>
+
 
 <!-- ================= SERVICES ================= -->
 <section id="services" class="section dark">
@@ -480,6 +568,7 @@ document.getElementById(tab.dataset.tab).classList.add('active');
 
 </body>
 </html>
+
 
 
 
