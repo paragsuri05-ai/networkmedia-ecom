@@ -74,17 +74,16 @@ list-style:none;
 
 nav ul li a{
 text-decoration:none;
-color:#e2e8f0;
+color:#7dd3fc;   /* ⭐ light blue default */
 font-size:14px;
 font-weight:500;
-transition:.3s;
+transition:.25s ease;
 }
 
+/* hover → white */
 nav ul li a:hover{
-color:#00d4ff;
+color:#ffffff;
 }
-
-
 
 
 
@@ -94,30 +93,48 @@ height:100vh;
 display:flex;
 align-items:center;
 justify-content:space-between;
-padding:0 10%;
-gap:60px;
+
+/* ⭐ navbar space added */
+padding:120px 10% 0;
+
+gap:70px;
 
 background:
 radial-gradient(circle at 10% 20%, #00d4ff33, transparent 40%),
 radial-gradient(circle at 80% 70%, #0066ff33, transparent 40%);
 }
 
+/* LEFT TEXT */
 .hero-text{
 flex:1;
 }
 
+/* ================= HERO HEADING PRO (Gobble style) ================= */
 .hero-text h1{
-font-size:72px;
-font-weight:600;   /* ⭐ thinner */
-line-height:1.1;
-letter-spacing:-1px;
+font-size:78px;
+font-weight:700;
+line-height:1.05;
+letter-spacing:-2px;
+margin-bottom:22px;
 }
 
+/* gradient highlight word */
+.highlight{
+background:linear-gradient(45deg,#00d4ff,#4f8cff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+font-weight:800;
+}
+
+/* subtitle */
 .hero-text p{
-opacity:.8;
+font-size:18px;
+opacity:.75;
 max-width:600px;
+margin-top:10px;
 }
 
+/* RIGHT IMAGE */
 .hero-img{
 flex:1;
 }
@@ -127,6 +144,7 @@ width:100%;
 border-radius:18px;
 box-shadow:0 20px 60px rgba(0,0,0,.6);
 }
+
 
 /* ================= BUTTON ================= */
 .btn{
@@ -330,7 +348,11 @@ gap:30px;
 <section id="home" class="hero">
 
 <div class="hero-text">
-<h1>Expand Globally. Grow Faster.</h1>
+<h1>
+Expand Globally.<br>
+<span class="highlight">Grow</span> Faster.
+</h1>
+
 
 <p>
 Network Media helps brands scale across Amazon, Walmart, Flipkart, Myntra,
@@ -457,6 +479,7 @@ document.getElementById(tab.dataset.tab).classList.add('active');
 
 </body>
 </html>
+
 
 
 
