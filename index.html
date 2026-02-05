@@ -390,6 +390,40 @@ transition:.3s;
 background:rgba(255,255,255,.08);
 }
 
+/* ===== MOVING LOGOS (GobbleCube style) ===== */
+
+.logos-slider{
+overflow:hidden;
+width:100%;
+position:relative;
+}
+
+.logos-track{
+display:flex;
+gap:70px;
+width:max-content;
+animation:scrollLogos 35s linear infinite;
+will-change:transform;
+}
+
+@keyframes scrollLogos{
+0%{ transform:translateX(0); }
+100%{ transform:translateX(-100%); }
+}
+
+
+.logos-track img{
+height:38px;
+filter:brightness(0) invert(1);
+opacity:.75;
+transition:.3s;
+}
+
+.logos-track img:hover{
+opacity:1;
+transform:scale(1.1);
+}
+
 
 
 </style>
@@ -469,20 +503,31 @@ Trusted By <span class="highlight">350+</span> Leading Brands Worldwide
 
 <div class="trusted-box">
 
-<div class="logos">
-<img src="https://upload.wikimedia.org/wikipedia/commons/0/08/L%27Or%C3%A9al_logo.svg">
-<img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Nivea_logo.svg">
-<img src="https://upload.wikimedia.org/wikipedia/commons/3/36/Dabur_Logo.svg">
-<img src="https://upload.wikimedia.org/wikipedia/commons/3/30/Reckitt_logo.svg">
-<img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Philips_logo_new.svg">
-<img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Dr_Reddy%27s_Laboratories_logo.svg">
+<div class="logos-slider">
+  <div class="logos-track">
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/L%27Or%C3%A9al_logo.svg">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Nivea_logo.svg">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/Dabur_Logo.svg">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/Reckitt_logo.svg">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Philips_logo_new.svg">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Dr_Reddy%27s_Laboratories_logo.svg">
+
+    <!-- duplicate -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/L%27Or%C3%A9al_logo.svg">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Nivea_logo.svg">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/Dabur_Logo.svg">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/Reckitt_logo.svg">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Philips_logo_new.svg">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Dr_Reddy%27s_Laboratories_logo.svg">
+
+  </div>
 </div>
 
 <a href="#" class="trusted-btn">See what we unlocked for them →</a>
 
 </div>
 </section>
-
 
 <!-- ================= SERVICES ================= -->
 <section id="services" class="section dark">
@@ -546,7 +591,8 @@ help your brand win in competitive marketplaces.
 <!-- CTA -->
 <section class="cta">
 <h2>Let's Start a Partnership</h2>
-  </p>Are you ready to accelerate your e-Commerce growth?<p>
+  <p>Are you ready to accelerate your e-Commerce growth?</p>
+
 <a href="mailto:network.media@hotmail.com" class="btn">Contact Now</a>
 </section>
 
@@ -575,6 +621,7 @@ document.getElementById(tab.dataset.tab).classList.add('active');
 
 </body>
 </html>
+
 
 
 
