@@ -296,6 +296,18 @@ background:linear-gradient(45deg,#00d4ff,#0066ff);
 padding:15px 20px;
 text-align:center;
 }
+   /* ===== ABOUT BOX STYLING ===== */
+.about-box {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.15);
+  backdrop-filter: blur(8px);
+  border-radius: 24px;
+  padding: 40px 30px;
+  margin-top: 30px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+  text-align: left;
+}
+
 
 /* ================= FOOTER ================= */
 footer{
@@ -476,22 +488,27 @@ Nykaa, Blinkit, Zepto,Instamart & more.
 
 <!-- ABOUT -->
 <section id="about" class="section">
-<h2>Know Us</h2>
+  <h2>Know Us</h2>
 
-<p>
-Our team can help you overcome any challenges that come with going global. 
-  From logistics and taxes to translation and localisation, we provide a hassle-free full-service solution. 
-  We help brands prepare for a digital-first approach to commerce. Our close-knit team is passionate about eCommerce and deeply service-oriented. 
-  Committed to helping you Launch, Grow & Optimize your business on Marketplaces. 
-  Most of our business comes through referrals — proof of our customer satisfaction.
-</p>
+  <div class="about-box">
 
-<div class="stats">
-<div class="stat"><h3>50+</h3><p>Brands</p></div>
-<div class="stat"><h3>15+</h3><p>Marketplaces</p></div>
-<div class="stat"><h3>5x</h3><p>Growth</p></div>
-</div>
+    <p>
+      Our team can help you overcome any challenges that come with going global. 
+      From logistics and taxes to translation and localisation, we provide a hassle-free full-service solution. 
+      We help brands prepare for a digital-first approach to commerce. Our close-knit team is passionate about eCommerce and deeply service-oriented. 
+      Committed to helping you Launch, Grow & Optimize your business on Marketplaces. 
+      Most of our business comes through referrals — proof of our customer satisfaction.
+    </p>
+
+    <div class="stats">
+      <div class="stat"><h3>50+</h3><p>Brands</p></div>
+      <div class="stat"><h3>15+</h3><p>Marketplaces</p></div>
+      <div class="stat"><h3>5x</h3><p>Growth</p></div>
+    </div>
+
+  </div>
 </section>
+
 
    <!-- ================= TRUSTED BRANDS ================= -->
 <section id="trusted" class="trusted">
@@ -528,6 +545,8 @@ Our team can help you overcome any challenges that come with going global.
 
   </div>
 </section>
+
+   
 
 
 <!-- ================= SERVICES ================= -->
@@ -600,6 +619,7 @@ help your brand win in competitive marketplaces.
 <footer>
 © 2026 Network Media Inc. All rights reserved.
 </footer>
+   
 
    
    <!-- ================= SCRIPT ================= -->
@@ -622,6 +642,7 @@ document.getElementById(tab.dataset.tab).classList.add('active');
 
 </body>
 </html>
+
 
 
 
