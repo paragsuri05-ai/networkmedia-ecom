@@ -392,23 +392,22 @@ background:rgba(255,255,255,.08);
 
 /* ===== MOVING LOGOS (GobbleCube style) ===== */
 
-.logos-slider{
-overflow:hidden;
-width:100%;
-position:relative;
+.logos-slider {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
 }
 
-.logos-track{
-display:flex;
-gap:70px;
-width:max-content;
-animation:scrollLogos 35s linear infinite;
-will-change:transform;
+.logos-track {
+  display: flex;
+  gap: 70px;
+  animation:scrollLogos 20s linear infinite;
+  will-change: transform;
 }
 
-@keyframes scrollLogos{
-0%{ transform:translateX(0); }
-100%{ transform:translateX(-100%); }
+@keyframes scrollLogos {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 
@@ -621,6 +620,7 @@ document.getElementById(tab.dataset.tab).classList.add('active');
 
 </body>
 </html>
+
 
 
 
