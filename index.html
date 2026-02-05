@@ -390,39 +390,39 @@ transition:.3s;
 background:rgba(255,255,255,.08);
 }
 
-/* ===== MOVING LOGOS (GobbleCube style) ===== */
+/* ===== PERFECT SEAMLESS LOGO MARQUEE ===== */
 
-.logos-slider {
-  overflow: hidden;
-  width: 100%;
-  position: relative;
+.logos-slider{
+  overflow:hidden;
+  width:100%;
+  position:relative;
 }
 
-.logos-track {
-  display: flex;
-  gap: 70px;
-  animation:scrollLogos 20s linear infinite;
-  will-change: transform;
+.logos-track{
+  display:flex;
+  gap:80px;
+  width:200%;                 /* ⭐ important */
+  animation:marqueeloop 8s linear infinite;
 }
-
-@keyframes scrollLogos {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
 
 .logos-track img{
-height:38px;
-filter:brightness(0) invert(1);
-opacity:.75;
-transition:.3s;
+  height:38px;
+  flex-shrink:0;              /* ⭐ prevents squeezing */
+  filter:brightness(0) invert(1);
+  opacity:.75;
+  transition:.3s;
 }
 
 .logos-track img:hover{
-opacity:1;
-transform:scale(1.1);
+  opacity:1;
+  transform:scale(1.1);
 }
 
+/* ⭐ PERFECT LOOP */
+@keyframes marqueeloop{
+  from{ transform:translateX(0); }
+  to{   transform:translateX(-50%); }
+}
 
 
 </style>
@@ -496,37 +496,39 @@ Our team can help you overcome any challenges that come with going global.
    <!-- ================= TRUSTED BRANDS ================= -->
 <section id="trusted" class="trusted">
 
-<h2>
-Trusted By <span class="highlight">350+</span> Leading Brands Worldwide
-</h2>
+  <h2>
+    Trusted By <span class="highlight">350+</span> Leading Brands Worldwide
+  </h2>
 
-<div class="trusted-box">
+  <div class="trusted-box">
 
-<div class="logos-slider">
-  <div class="logos-track">
+    <div class="logos-slider">
+      <div class="logos-track">
 
-    <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/L%27Or%C3%A9al_logo.svg">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Nivea_logo.svg">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/Dabur_Logo.svg">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/Reckitt_logo.svg">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Philips_logo_new.svg">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Dr_Reddy%27s_Laboratories_logo.svg">
+        <!-- ORIGINAL LOGOS -->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/L%27Or%C3%A9al_logo.svg">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Nivea_logo.svg">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/Dabur_Logo.svg">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/Reckitt_logo.svg">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Philips_logo_new.svg">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Dr_Reddy%27s_Laboratories_logo.svg">
 
-    <!-- duplicate -->
-    <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/L%27Or%C3%A9al_logo.svg">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Nivea_logo.svg">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/Dabur_Logo.svg">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/Reckitt_logo.svg">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Philips_logo_new.svg">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Dr_Reddy%27s_Laboratories_logo.svg">
+        <!-- DUPLICATE EXACTLY SAME SET -->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/L%27Or%C3%A9al_logo.svg">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Nivea_logo.svg">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/Dabur_Logo.svg">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/Reckitt_logo.svg">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Philips_logo_new.svg">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Dr_Reddy%27s_Laboratories_logo.svg">
+
+      </div>
+    </div>
+
+    <a href="#" class="trusted-btn">See what we unlocked for them →</a>
 
   </div>
-</div>
-
-<a href="#" class="trusted-btn">See what we unlocked for them →</a>
-
-</div>
 </section>
+
 
 <!-- ================= SERVICES ================= -->
 <section id="services" class="section dark">
@@ -620,6 +622,7 @@ document.getElementById(tab.dataset.tab).classList.add('active');
 
 </body>
 </html>
+
 
 
 
