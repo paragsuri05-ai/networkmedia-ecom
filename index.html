@@ -353,6 +353,24 @@ font-size:32px;
 font-weight:600;
 margin-bottom:60px;
 }
+   /* ⭐ TRUSTED BOX (card look) */
+.trusted-box{
+max-width:1100px;
+margin:auto;
+
+padding:60px 40px;
+
+background:rgba(255,255,255,0.04);
+border:1px solid rgba(255,255,255,0.12);
+
+border-radius:28px;
+backdrop-filter:blur(10px);
+
+box-shadow:0 20px 80px rgba(0,0,0,.45);
+position:relative;
+overflow:hidden;
+}
+
 
 
 /* wrapper */
@@ -470,43 +488,50 @@ Nykaa, Blinkit, Zepto,Instamart & more.
  <!-- ================= TRUSTED ================= -->
 <section id="trusted" class="trusted">
 
-    <h2>Trusted By Leading Brands</h2>
+  <h2>Trusted By Leading Brands</h2>
+
+  <div class="trusted-box">
 
     <div class="logos-slider">
-        <div class="logos-track">
 
-            <!-- set 1 -->
-            <img src="images/logos/amazon.png" alt="Amazon">
-            <img src="images/logos/flipkart.png" alt="Flipkart">
-            <img src="images/logos/myntra.png" alt="Myntra">
-            <img src="images/logos/meesho.png" alt="Meesho">
-            <img src="images/logos/nykaa.png" alt="Nykaa">
-            <img src="images/logos/blinkit.png" alt="Blinkit">
-            <img src="images/logos/instamart.png" alt="Instamart">
-            <img src="images/logos/zepto.png" alt="Zepto">
-            <img src="images/logos/bigbasket.png" alt="Big Basket">
-            <img src="images/logos/jiomart.png" alt="Jio Mart">
-            <img src="images/logos/walmart.png" alt="Walmart">
-            <img src="images/logos/noon.png" alt="Noon">
+      <div class="logos-track">
 
-            <!-- duplicate for smooth infinite loop -->
-            <img src="images/logos/amazon.png">
-            <img src="images/logos/flipkart.png">
-            <img src="images/logos/myntra.png">
-            <img src="images/logos/meesho.png">
-            <img src="images/logos/nykaa.png">
-            <img src="images/logos/blinkit.png">
-            <img src="images/logos/instamart.png">
-            <img src="images/logos/zepto.png">
-            <img src="images/logos/bigbasket.png">
-            <img src="images/logos/jiomart.png">
-            <img src="images/logos/walmart.png">
-            <img src="images/logos/noon.png">
+        <!-- set 1 -->
+        <img src="images/logos/amazon.png" alt="Amazon">
+        <img src="images/logos/flipkart.png" alt="Flipkart">
+        <img src="images/logos/myntra.png" alt="Myntra">
+        <img src="images/logos/meesho.png" alt="Meesho">
+        <img src="images/logos/nykaa.png" alt="Nykaa">
+        <img src="images/logos/blinkit.png" alt="Blinkit">
+        <img src="images/logos/instamart.png" alt="Instamart">
+        <img src="images/logos/zepto.png" alt="Zepto">
+        <img src="images/logos/bigbasket.png" alt="Big Basket">
+        <img src="images/logos/jiomart.png" alt="Jio Mart">
+        <img src="images/logos/walmart.png" alt="Walmart">
+        <img src="images/logos/noon.png" alt="Noon">
 
-        </div>
+        <!-- duplicate for smooth loop -->
+        <img src="images/logos/amazon.png">
+        <img src="images/logos/flipkart.png">
+        <img src="images/logos/myntra.png">
+        <img src="images/logos/meesho.png">
+        <img src="images/logos/nykaa.png">
+        <img src="images/logos/blinkit.png">
+        <img src="images/logos/instamart.png">
+        <img src="images/logos/zepto.png">
+        <img src="images/logos/bigbasket.png">
+        <img src="images/logos/jiomart.png">
+        <img src="images/logos/walmart.png">
+        <img src="images/logos/noon.png">
+
+      </div>
+
     </div>
 
+  </div>
+
 </section>
+
 
 <!-- ================= SERVICES ================= -->
 <section id="services" class="section dark">
@@ -601,6 +626,7 @@ document.getElementById(tab.dataset.tab).classList.add('active');
 
 </body>
 </html>
+
 
 
 
