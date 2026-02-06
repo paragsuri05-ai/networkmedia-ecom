@@ -338,104 +338,61 @@ flex-direction:column;
 gap:30px;
 }
 }
-   /* ================= TRUSTED BRANDS ================= */
+  
+/* ================= TRUSTED BRANDS ================= */
 
 .trusted{
-padding:120px 10%;
+padding:120px 0;
 text-align:center;
+overflow:hidden;
+background:#0f172a;
 }
 
 .trusted h2{
 font-size:32px;
 font-weight:600;
-margin-bottom:40px;
+margin-bottom:60px;
 }
 
-.trusted-box{
-padding:50px 40px;
-border-radius:28px;
 
-background:rgba(255,255,255,0.04);
-border:1px solid rgba(255,255,255,0.12);
-
-backdrop-filter:blur(8px);
-box-shadow:0 20px 80px rgba(0,0,0,.45);
+/* wrapper */
+.logos-slider{
+overflow:hidden;
+width:100%;
 }
 
-/* LOGOS ROW */
-.logos{
+
+/* moving row */
+.logos-track{
 display:flex;
-flex-wrap:wrap;
-justify-content:center;
+gap:80px;
 align-items:center;
-gap:60px;
-margin-bottom:40px;
+width:max-content;
+animation:marqueeloop 25s linear infinite;
 }
 
-/* LOGO STYLE */
-.logos img{
-height:38px;
+
+/* logos */
+.logos-track img{
+height:40px;
+width:auto;
+flex-shrink:0;
 filter:brightness(0) invert(1);
 opacity:.75;
 transition:.3s;
 }
 
-.logos img:hover{
-opacity:1;
-transform:scale(1.08);
-}
-
-/* BUTTON */
-.trusted-btn{
-display:inline-block;
-padding:14px 28px;
-border-radius:30px;
-
-border:1px solid rgba(255,255,255,.25);
-text-decoration:none;
-color:#e2e8f0;
-
-transition:.3s;
-}
-
-.trusted-btn:hover{
-background:rgba(255,255,255,.08);
-}
-
-/* ===== PERFECT SEAMLESS LOGO MARQUEE ===== */
-
-.logos-slider{
-  overflow:hidden;
-  width:100%;
-  position:relative;
-}
-
-.logos-track{
-  display:flex;
-  gap:80px;
-  width:200%;                 /* ⭐ important */
-  animation:marqueeloop 8s linear infinite;
-}
-
-.logos-track img{
-  height:38px;
-  flex-shrink:0;              /* ⭐ prevents squeezing */
-  filter:brightness(0) invert(1);
-  opacity:.75;
-  transition:.3s;
-}
-
 .logos-track img:hover{
-  opacity:1;
-  transform:scale(1.1);
+opacity:1;
+transform:scale(1.1);
 }
 
-/* ⭐ PERFECT LOOP */
+
+/* loop */
 @keyframes marqueeloop{
-  from{ transform:translateX(0); }
-  to{   transform:translateX(-50%); }
+from{ transform:translateX(0); }
+to{   transform:translateX(-50%); }
 }
-
 
 </style>
 </head>
@@ -510,15 +467,15 @@ Nykaa, Blinkit, Zepto,Instamart & more.
 </section>
 
 
-  <!-- ================= TRUSTED ================= -->
+ <!-- ================= TRUSTED ================= -->
 <section id="trusted" class="trusted">
 
-    <h2 class="section-title">Trusted By Leading Brands</h2>
+    <h2>Trusted By Leading Brands</h2>
 
-    <div class="logo-slider">
-        <div class="logo-track">
+    <div class="logos-slider">
+        <div class="logos-track">
 
-            <!-- logos set 1 -->
+            <!-- set 1 -->
             <img src="images/logos/amazon.png" alt="Amazon">
             <img src="images/logos/flipkart.png" alt="Flipkart">
             <img src="images/logos/myntra.png" alt="Myntra">
@@ -532,7 +489,7 @@ Nykaa, Blinkit, Zepto,Instamart & more.
             <img src="images/logos/walmart.png" alt="Walmart">
             <img src="images/logos/noon.png" alt="Noon">
 
-            <!-- duplicate for infinite scroll -->
+            <!-- duplicate for smooth infinite loop -->
             <img src="images/logos/amazon.png">
             <img src="images/logos/flipkart.png">
             <img src="images/logos/myntra.png">
@@ -644,6 +601,7 @@ document.getElementById(tab.dataset.tab).classList.add('active');
 
 </body>
 </html>
+
 
 
 
