@@ -424,12 +424,14 @@ to{   transform:translateX(-50%); }
   }
 
   /* NAVBAR */
-  nav{
-    width:95% !important;
-    padding:12px 18px !important;
-    gap:18px !important;
-    flex-direction:column;
-  }
+nav{
+  width:95% !important;
+  padding:12px 18px !important;
+
+  flex-direction:row !important;
+  justify-content:space-between;
+  align-items:center;
+}
 
  .nav-links{
   flex-direction:column !important;
@@ -853,6 +855,7 @@ document.querySelectorAll("#nav-links a").forEach(link=>{
 
 </body>
 </html>
+
 
 
 
