@@ -506,6 +506,43 @@ to{   transform:translateX(-50%); }
   }
 
 }
+/* ================= HAMBURGER MENU ================= */
+
+.mobile-toggle{
+display:none;
+flex-direction:column;
+gap:5px;
+cursor:pointer;
+}
+
+.mobile-toggle span{
+width:26px;
+height:3px;
+background:white;
+border-radius:3px;
+}
+
+/* Mobile only */
+@media(max-width:900px){
+
+.mobile-toggle{
+display:flex;
+}
+
+/* hide menu */
+.nav-links{
+display:none !important;
+flex-direction:column;
+gap:18px;
+margin-top:20px;
+}
+
+/* show when active */
+.nav-active{
+display:flex !important;
+}
+
+}
 
 
 </style>
@@ -518,7 +555,13 @@ to{   transform:translateX(-50%); }
 
 <a href="#home" class="nav-logo">Network Media Inc.</a>
 
-<ul>
+<div class="mobile-toggle" id="mobile-toggle">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+<ul class="nav-links" id="nav-links">
 <li><a href="#about">Know Us</a></li>
 <li><a href="#services">What We Do</a></li>
 <li><a href="#trusted">Partners</a></li>
@@ -526,10 +569,6 @@ to{   transform:translateX(-50%); }
 </ul>
 
 </nav>
-
-
-
-
 
 <!-- HERO -->
 <section id="home" class="hero">
@@ -718,10 +757,20 @@ document.getElementById(tab.dataset.tab).classList.add('active');
 });
 });
 
+   /* ⭐ mobile menu toggle */
+const toggle = document.getElementById("mobile-toggle");
+const menu = document.getElementById("nav-links");
+
+toggle.onclick = () => {
+  menu.classList.toggle("nav-active");
+};
+
+
 </script>
 
 </body>
 </html>
+
 
 
 
