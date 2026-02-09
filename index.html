@@ -66,14 +66,13 @@ color:white;
 
 
 /* LINKS */
-nav ul{
+.nav-links{
 display:flex;
-gap:42px; /* ⭐ more spacing */
+gap:42px;
 margin-left:auto;
-}
-nav ul{
 list-style:none;
 }
+
 
 nav ul li a{
 text-decoration:none;
@@ -432,12 +431,12 @@ to{   transform:translateX(-50%); }
     flex-direction:column;
   }
 
-  nav ul{
-    flex-direction:column !important;
-    gap:14px !important;
-    margin-left:0 !important;
-    align-items:center;
-  }
+ .nav-links{
+  flex-direction:column !important;
+  gap:14px !important;
+  margin-left:0 !important;
+  align-items:center;
+}
 
   /* HERO */
   .hero{
@@ -463,10 +462,15 @@ to{   transform:translateX(-50%); }
     flex-direction:column !important;
     padding:20px !important;
   }
+  /* SERVICES accordion style mobile */
+.services-tabs{
+  width:100% !important;
+}
 
-  .services-tabs{
-    width:100% !important;
-  }
+.services-content{
+  width:100% !important;
+  margin-top:20px;
+}
 
   .services-content{
     padding:25px !important;
@@ -506,6 +510,40 @@ to{   transform:translateX(-50%); }
   }
 
 }
+
+   /* ===== SERVICES ACCORDION (mobile only) ===== */
+@media (max-width:900px){
+
+  /* hide right panel only on mobile */
+  .services-content{
+    display:none !important;
+  }
+
+  /* each tab full width */
+  .tab{
+    width:100%;
+  }
+
+  /* accordion content box */
+  .mobile-content{
+    display:none;
+    padding:14px;
+    margin-top:10px;
+    border-radius:12px;
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.12);
+    font-size:14px;
+  }
+
+  /* open */
+  .mobile-content.show{
+    display:block;
+  }
+
+}
+
+
+   
 /* ================= HAMBURGER MENU ================= */
 
 .mobile-toggle{
@@ -677,10 +715,34 @@ Nykaa, Blinkit, Zepto,Instamart & more.
 
 <div class="services-tabs">
 
-<div class="tab active" data-tab="t1"> Marketplace Management</div>
-<div class="tab" data-tab="t2"> Performance Marketing</div>
-<div class="tab" data-tab="t3"> Business Analysis</div>
-<div class="tab" data-tab="t4"> Growth Strategy</div>
+<div class="tab active" data-tab="t1">
+  Marketplace Management
+  <div class="mobile-content">
+    Catalog setup, listing optimization and daily operations to maximize sales.
+  </div>
+</div>
+
+<div class="tab" data-tab="t2">
+  Performance Marketing
+  <div class="mobile-content">
+    ROI focused ads on Meta & Google to drive scalable conversions.
+  </div>
+</div>
+
+<div class="tab" data-tab="t3">
+  Business Analysis
+  <div class="mobile-content">
+    Data insights, reports and competitor tracking to unlock growth opportunities.
+  </div>
+</div>
+
+<div class="tab" data-tab="t4">
+  Growth Strategy
+  <div class="mobile-content">
+    Structured plans and systems that help your brand grow faster and smarter.
+  </div>
+</div>
+
 
 </div>
 
@@ -764,12 +826,40 @@ const menu = document.getElementById("nav-links");
 toggle.onclick = () => {
   menu.classList.toggle("nav-active");
 };
+/* auto close menu after click */
+document.querySelectorAll(".nav-links a").forEach(link=>{
+  link.addEventListener("click", ()=>{
+    menu.classList.remove("nav-active");
+  });
+});
+
+   /* ===== mobile accordion only ===== */
+
+document.querySelectorAll(".tab").forEach(tab=>{
+  tab.addEventListener("click", ()=>{
+
+    if(window.innerWidth <= 900){
+
+      const box = tab.querySelector(".mobile-content");
+
+      document.querySelectorAll(".mobile-content")
+        .forEach(c=>{
+          if(c !== box) c.classList.remove("show");
+        });
+
+      box.classList.toggle("show");
+    }
+
+  });
+});
+
 
 
 </script>
 
 </body>
 </html>
+
 
 
 
