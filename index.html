@@ -713,62 +713,54 @@ Nykaa, Blinkit, Zepto,Instamart & more.
 
 <div class="services-split">
 
-<div class="services-tabs">
+  <!-- LEFT TABS -->
+  <div class="services-tabs">
 
-<div class="tab active" data-tab="t1">
-  Marketplace Management
-  <div class="mobile-content">
-    Catalog setup, listing optimization and daily operations to maximize sales.
+    <div class="tab active" data-tab="t1">
+      <span class="tab-title">Marketplace Management</span>
+      <div class="mobile-content">
+        Catalog setup, listing optimization and daily operations to maximize sales.
+      </div>
+    </div>
+
+    <div class="tab" data-tab="t2">
+      <span class="tab-title">Performance Marketing</span>
+      <div class="mobile-content">
+        ROI focused ads on Meta & Google to drive scalable conversions.
+      </div>
+    </div>
+
+    <div class="tab" data-tab="t3">
+      <span class="tab-title">Business Analysis</span>
+      <div class="mobile-content">
+        Data insights, reports and competitor tracking to unlock growth opportunities.
+      </div>
+    </div>
+
   </div>
-</div>
 
-<div class="tab" data-tab="t2">
-  Performance Marketing
-  <div class="mobile-content">
-    ROI focused ads on Meta & Google to drive scalable conversions.
+
+  <!-- RIGHT CONTENT (desktop only) -->
+  <div class="services-content">
+
+    <div class="content-box active" id="t1">
+      <h3>Marketplace Management</h3>
+      <p>Catalog setup, listing optimization and daily operations to maximize sales.</p>
+    </div>
+
+    <div class="content-box" id="t2">
+      <h3>Performance Marketing</h3>
+      <p>ROI focused ads on Meta & Google to drive scalable conversions.</p>
+    </div>
+
+    <div class="content-box" id="t3">
+      <h3>Business Analysis</h3>
+      <p>Data insights, reports and competitor tracking to unlock growth opportunities.</p>
+    </div>
+
   </div>
-</div>
-
-<div class="tab" data-tab="t3">
-  Business Analysis
-  <div class="mobile-content">
-    Data insights, reports and competitor tracking to unlock growth opportunities.
-  </div>
-</div>
-
-<div class="tab" data-tab="t4">
-  Growth Strategy
-  <div class="mobile-content">
-    Structured plans and systems that help your brand grow faster and smarter.
-  </div>
-</div>
-
 
 </div>
-
-
-<div class="services-content">
-
-<div class="content active" id="t1">
-<h3>Marketplace Management</h3>
-</div>
-
-<div class="content" id="t2">
-<h3>Performance Marketing</h3>
-</div>
-
-<div class="content" id="t3">
-<h3>Business Analysis</h3>
-</div>
-
-<div class="content" id="t4">
-<h3>Growth Strategy</h3>
-</div>
-
-</div>
-
-</div>
-
 </section>
 
 <!-- IMAGE SECTION -->
@@ -799,62 +791,69 @@ help your brand win in competitive marketplaces.
    
 
    
-   <!-- ================= SCRIPT ================= -->
+<!-- ================= SCRIPT ================= -->
 <script>
 
-const tabs=document.querySelectorAll('.tab');
-const contents=document.querySelectorAll('.content');
+/* ===== SERVICES (desktop + mobile both) ===== */
+
+const tabs = document.querySelectorAll('.tab');
+const boxes = document.querySelectorAll('.content-box');
 
 tabs.forEach(tab=>{
-tab.addEventListener('click',()=>{
-tabs.forEach(t=>t.classList.remove('active'));
-contents.forEach(c=>c.classList.remove('active'));
 
-tab.classList.add('active');
-document.getElementById(tab.dataset.tab).classList.add('active');
-});
-});
+  tab.addEventListener('click', ()=>{
 
-   /* ⭐ mobile menu toggle */
-const toggle = document.getElementById("mobile-toggle");
-const menu = document.getElementById("nav-links");
+    const id = tab.dataset.tab;
 
-toggle.onclick = () => {
-  menu.classList.toggle("nav-active");
-};
-/* auto close menu after click */
-document.querySelectorAll(".nav-links a").forEach(link=>{
-  link.addEventListener("click", ()=>{
-    menu.classList.remove("nav-active");
-  });
-});
+    /* remove active */
+    tabs.forEach(t=>t.classList.remove('active'));
+    boxes.forEach(b=>b.classList.remove('active'));
 
-   /* ===== mobile accordion only ===== */
+    tab.classList.add('active');
 
-document.querySelectorAll(".tab").forEach(tab=>{
-  tab.addEventListener("click", ()=>{
+    /* DESKTOP right content */
+    const box = document.getElementById(id);
+    if(box) box.classList.add('active');
 
+    /* MOBILE accordion */
     if(window.innerWidth <= 900){
 
-      const box = tab.querySelector(".mobile-content");
+      const mobileBox = tab.querySelector('.mobile-content');
 
-      document.querySelectorAll(".mobile-content")
+      document.querySelectorAll('.mobile-content')
         .forEach(c=>{
-          if(c !== box) c.classList.remove("show");
+          if(c !== mobileBox) c.classList.remove('show');
         });
 
-      box.classList.toggle("show");
+      mobileBox.classList.toggle('show');
     }
 
   });
+
 });
 
 
+/* ===== MOBILE NAV TOGGLE ===== */
+
+const toggle = document.getElementById("mobile-toggle");
+const menu = document.getElementById("nav-links");
+
+toggle.onclick = ()=>{
+  menu.classList.toggle("nav-active");
+};
+
+/* auto close after click */
+document.querySelectorAll("#nav-links a").forEach(link=>{
+  link.onclick = ()=>{
+    menu.classList.remove("nav-active");
+  };
+});
 
 </script>
 
 </body>
 </html>
+
 
 
 
