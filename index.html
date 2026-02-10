@@ -425,7 +425,7 @@ to{   transform:translateX(-50%); }
 
   /* ================= NAVBAR ================= */
 
- nav{
+nav{
   width:92% !important;
   padding:12px 16px !important;
 
@@ -437,10 +437,13 @@ to{   transform:translateX(-50%); }
   justify-content:space-between;
   align-items:center;
 
-  position:relative;
+  position:fixed !important;   /* ⭐ fix */
+  top:12px !important;         /* ⭐ fix */
 
-  border-radius:28px; /* ⭐ softer pill */
+  border-radius:28px;
+  z-index:9999;                /* ⭐ always on top */
 }
+
 
 
   /* hamburger */
@@ -853,6 +856,7 @@ document.querySelectorAll("#nav-links a").forEach(link=>{
 
 </body>
 </html>
+
 
 
 
