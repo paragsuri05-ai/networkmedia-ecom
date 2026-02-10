@@ -613,9 +613,41 @@ nav{
 .stat h3{
   font-size:34px !important;
 }
+/* ===== KNOW US MOBILE PERFECT FIX ===== */
 
+.about-box{
+  width:100% !important;
+  max-width:100% !important;
+
+  padding:26px 18px !important;
+  margin-top:20px !important;
+
+  border-radius:16px !important;
+  text-align:left !important;   /* ⭐ left looks clean, not center */
 }
 
+/* paragraph readability */
+.about-box p{
+  font-size:15px !important;
+  line-height:1.8 !important;
+  letter-spacing:0.2px;
+  opacity:.9;
+}
+
+/* stats spacing */
+.stats{
+  margin-top:30px !important;
+  flex-direction:column !important;
+  gap:26px !important;
+  align-items:center;
+}
+
+/* numbers size */
+.stat h3{
+  font-size:32px !important;
+}
+
+}
 
 </style>
 </head>
@@ -887,6 +919,7 @@ document.querySelectorAll("#nav-links a").forEach(link=>{
 
 </body>
 </html>
+
 
 
 
