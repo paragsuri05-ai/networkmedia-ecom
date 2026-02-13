@@ -385,7 +385,7 @@ display:flex;
 gap:80px;
 align-items:center;
 width:max-content;
-animation:marqueeloop 14s linear infinite;
+animation:marqueeloop 12s linear infinite;
 }
 
 
@@ -395,7 +395,8 @@ animation:marqueeloop 14s linear infinite;
     width:120px;
     object-fit:contain;
     flex-shrink:0;
-    opacity:.85;
+    opacity:.8;
+    filter: brightness(0) invert(1);  /* ⭐ make white */
     transition:.3s ease;
 }
 
@@ -403,7 +404,6 @@ animation:marqueeloop 14s linear infinite;
     opacity:1;
     transform:scale(1.1);
 }
-
 
 /* loop */
 @keyframes marqueeloop{
@@ -931,6 +931,7 @@ document.querySelectorAll("#nav-links a").forEach(link=>{
 
 </body>
 </html>
+
 
 
 
