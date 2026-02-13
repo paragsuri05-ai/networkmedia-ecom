@@ -385,23 +385,23 @@ display:flex;
 gap:80px;
 align-items:center;
 width:max-content;
-animation:marqueeloop 8s linear infinite;
+animation:marqueeloop 14s linear infinite;
 }
 
 
 /* logos */
 .logos-track img{
-height:40px;
-width:auto;
-flex-shrink:0;
-filter:brightness(0) invert(1);
-opacity:.75;
-transition:.3s;
+    height:60px;
+    width:120px;
+    object-fit:contain;
+    flex-shrink:0;
+    opacity:.85;
+    transition:.3s ease;
 }
 
 .logos-track img:hover{
-opacity:1;
-transform:scale(1.1);
+    opacity:1;
+    transform:scale(1.1);
 }
 
 
@@ -931,6 +931,7 @@ document.querySelectorAll("#nav-links a").forEach(link=>{
 
 </body>
 </html>
+
 
 
 
