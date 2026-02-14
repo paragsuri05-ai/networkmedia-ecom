@@ -384,15 +384,19 @@ width:100%;
 
 /* moving row */
 .logos-track{
-display:flex;
-gap:80px;
-align-items:center;
-width:max-content;
-animation:marqueeloop 12s linear infinite;
+  display:flex;
+  gap:60px;
+  align-items:center;
+  width:max-content;
+  animation:marqueeloop 12s linear infinite;
 }
+
 
 /* Trusted Logos — stronger white & bolder */
 .trusted-box .logos-track img{
+  max-height:65px;   /* ⭐ yeh line add karo */
+  width:auto;
+  flex-shrink:0;
   filter:
     brightness(3)        /* strong brightness */
     contrast(2)          /* stronger contrast */
@@ -406,6 +410,7 @@ animation:marqueeloop 12s linear infinite;
 .trusted-box .logos-track img:hover{
   transform: scale(1.15);
 }
+
 
 /* loop */
 @keyframes marqueeloop{
@@ -933,6 +938,7 @@ document.querySelectorAll("#nav-links a").forEach(link=>{
 
 </body>
 </html>
+
 
 
 
