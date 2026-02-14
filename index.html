@@ -391,19 +391,18 @@ width:max-content;
 animation:marqueeloop 12s linear infinite;
 }
 
-
-/* logos */
 /* Trusted Logos — stronger white & bolder */
 .trusted-box .logos-track img{
   filter:
-    brightness(3)
-    contrast(2)
-    saturate(0)
-    drop-shadow(0 0 6px rgba(255,255,255,0.6));
+    brightness(3)        /* strong brightness */
+    contrast(2)          /* stronger contrast */
+    saturate(0)          /* remove remaining color */
+    drop-shadow(0 0 6px rgba(255,255,255,0.6)); /* subtle glow */
   opacity:1;
   transition: all .35s ease;
 }
 
+/* Hover — optional further grow */
 .trusted-box .logos-track img:hover{
   transform: scale(1.15);
 }
@@ -934,6 +933,7 @@ document.querySelectorAll("#nav-links a").forEach(link=>{
 
 </body>
 </html>
+
 
 
 
