@@ -393,19 +393,19 @@ animation:marqueeloop 12s linear infinite;
 
 
 /* logos */
-.logos-track img{
-    height:60px;
-    width:120px;
-    object-fit:contain;
-    flex-shrink:0;
-    opacity:.8;
-    filter: brightness(0) invert(1);  /* ⭐ make white */
-    transition:.3s ease;
+/* Trusted Logos — stronger white & bolder */
+.trusted-box .logos-track img{
+  filter:
+    brightness(3)
+    contrast(2)
+    saturate(0)
+    drop-shadow(0 0 6px rgba(255,255,255,0.6));
+  opacity:1;
+  transition: all .35s ease;
 }
 
-.logos-track img:hover{
-    opacity:1;
-    transform:scale(1.1);
+.trusted-box .logos-track img:hover{
+  transform: scale(1.15);
 }
 
 /* loop */
@@ -934,6 +934,7 @@ document.querySelectorAll("#nav-links a").forEach(link=>{
 
 </body>
 </html>
+
 
 
 
