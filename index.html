@@ -394,22 +394,20 @@ width:100%;
 
 /* Trusted Logos — stronger white & bolder */
 .trusted-box .logos-track img{
-  max-height:65px;   /* ⭐ yeh line add karo */
+  max-height:65px;
   width:auto;
   flex-shrink:0;
-  filter:
-    brightness(3)        /* strong brightness */
-    contrast(2)          /* stronger contrast */
-    saturate(0)          /* remove remaining color */
-    drop-shadow(0 0 6px rgba(255,255,255,0.6)); /* subtle glow */
-  opacity:1;
-  transition: all .35s ease;
+
+  filter: brightness(0) invert(1);
+  opacity:.75;
+  transition:.3s ease;
 }
 
-/* Hover — optional further grow */
 .trusted-box .logos-track img:hover{
-  transform: scale(1.15);
+  opacity:1;
+  transform:scale(1.1);
 }
+
 
 
 /* loop */
@@ -938,6 +936,7 @@ document.querySelectorAll("#nav-links a").forEach(link=>{
 
 </body>
 </html>
+
 
 
 
