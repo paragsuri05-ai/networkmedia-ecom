@@ -998,45 +998,53 @@ help your brand win in competitive marketplaces.
 
    <script>
 
-/* ===== GOBBLECUBE TABS + MOBILE ACCORDION ===== */
+/* ===== FIXED GOBBLECUBE TABS ===== */
 
-const gcTabs = document.querySelectorAll('.gc-tab');
-const gcBoxes = document.querySelectorAll('.gc-box');
+const gcTabs = document.querySelectorAll('#services .gc-tab');
+const gcBoxes = document.querySelectorAll('#services .gc-box');
 
-gcTabs.forEach((tab,i)=>{
-  tab.addEventListener('click',()=>{
+gcTabs.forEach(tab => {
 
-    if(window.innerWidth > 900){
-      // ===== DESKTOP MODE =====
-      gcTabs.forEach(t=>t.classList.remove('active'));
-      gcBoxes.forEach(b=>b.classList.remove('active'));
+  tab.addEventListener('click', () => {
 
-      tab.classList.add('active');
-      gcBoxes[i].classList.add('active');
-    }
-    else{
-      // ===== MOBILE ACCORDION MODE =====
+    const targetId = tab.getAttribute('data-tab');
+    const targetBox = document.getElementById(targetId);
 
-      // If same tab already open → close it
-      if(tab.querySelector('.mobile-accordion')){
-        tab.querySelector('.mobile-accordion').remove();
-        return;
-      }
+    // ===== DESKTOP =====
+    if (window.innerWidth > 900) {
 
-      // Remove any previously opened accordion
+      // remove all active
+      gcTabs.forEach(t => t.classList.remove('active'));
+      gcBoxes.forEach(b => b.classList.remove('active'));
+
+      // remove any mobile accordion
       document.querySelectorAll('.mobile-accordion')
-        .forEach(el=>el.remove());
+        .forEach(el => el.remove());
 
-      // Clone matching content
-      const clone = gcBoxes[i].cloneNode(true);
+      // activate correct one
+      tab.classList.add('active');
+      targetBox.classList.add('active');
+    }
+
+    // ===== MOBILE =====
+    else {
+
+      // remove existing accordions
+      document.querySelectorAll('.mobile-accordion')
+        .forEach(el => el.remove());
+
+      // if already open, close
+      if (tab.querySelector('.mobile-accordion')) return;
+
+      const clone = targetBox.cloneNode(true);
       clone.classList.remove('gc-box');
       clone.classList.add('mobile-accordion');
 
-      // Append below clicked tab
       tab.appendChild(clone);
     }
 
   });
+
 });
 
 
@@ -1061,6 +1069,7 @@ document.querySelectorAll("#nav-links a").forEach(link=>{
 
 </body>
 </html>
+
 
 
 
