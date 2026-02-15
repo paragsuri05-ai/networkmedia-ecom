@@ -391,7 +391,6 @@ opacity:1;
 transform:scale(1.1);
 }
 
-
 /* loop */
 @keyframes marqueeloop{
 from{ transform:translateX(0); }
@@ -668,17 +667,17 @@ body{
 /* MAIN WRAPPER */
 .gc-wrapper{
   display:flex;
-  gap:70px;
-  padding:60px;
-  border-radius:32px;
+  gap:50px;
+  padding:50px;
+  border-radius:28px;
 
-  background:rgba(255,255,255,.04);
-  backdrop-filter:blur(20px);
+  background:rgba(255,255,255,.03);
 
-  /* soft single outline */
-  box-shadow:0 0 0 1px rgba(255,255,255,.08),
-             0 40px 120px rgba(0,0,0,.6);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.06),
+    0 20px 60px rgba(0,0,0,.5);
 }
+
 
 
 
@@ -709,26 +708,22 @@ body{
 }
 
 .gc-tab.active{
-  background:rgba(255,255,255,.08);   /* light glass */
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.20);
   color:#ffffff;
-  border:1px solid rgba(255,255,255,.25);
-  box-shadow:none;
 }
 
 
 /* RIGHT PANEL */
 .gc-content{
   flex:1;
-  min-width:0;        /* ⭐ stops overflow */
-  padding:40px;
-  border-radius:26px;
+  min-width:0;
+  padding:32px;
+  border-radius:22px;
 
- border:1px solid rgba(255,255,255,.10);
-  background:rgba(255,255,255,.03);
-  box-shadow:
-    0 0 40px rgba(0,123,255,.06);
+  border:1px solid rgba(255,255,255,.08);
+  background:rgba(255,255,255,.02);
 }
-
 
 
 /* CONTENT */
@@ -756,25 +751,33 @@ body{
 /* BUTTON */
 .gc-btn{
   display:inline-block;
-  margin-top:30px;
-  padding:15px 36px;
+  margin-top:24px;
+  padding:12px 24px;
+  border-radius:14px;
 
-  border-radius:12px;
-
-  background:linear-gradient(45deg,#00d4ff,#007bff);
+  background:linear-gradient(90deg,#1e3a8a,#2563eb);
   color:white;
-  font-weight:600;
+  font-size:14px;
+  font-weight:500;
   text-decoration:none;
 
-  box-shadow:0 8px 30px rgba(0,123,255,.5);
+  box-shadow:0 6px 20px rgba(37,99,235,.4);
+  transition:.3s ease;
 }
+
+.gc-btn:hover{
+  transform:translateY(-2px);
+}
+
 
 /* MOBILE */
 @media(max-width:900px){
 
   .gc-wrapper{
     flex-direction:column !important;
-    padding:30px;
+    margin:0 16px !important;
+    padding:22px !important;
+    border-radius:22px !important;
   }
 
   /* Hide right panel on mobile */
@@ -788,11 +791,23 @@ body{
 
   .gc-tab{
     width:100%;
+    padding:18px 20px !important;
+    border-radius:14px !important;
+    font-size:15px !important;
+  }
+
+  .gc-content h3{
+    font-size:24px !important;
+    line-height:1.3;
+  }
+
+  .gc-content p{
+    font-size:14px !important;
+    line-height:1.6;
+    opacity:.8;
   }
 
 }
-
-
 </style>
 </head>
 
@@ -1069,6 +1084,7 @@ document.querySelectorAll("#nav-links a").forEach(link=>{
 
 </body>
 </html>
+
 
 
 
