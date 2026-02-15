@@ -1,4 +1,4 @@
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -95,9 +95,8 @@ opacity:1;
 }
 
 .submenu{
-  display:none;
   position:absolute;
-  top:100%;
+  top:110%;
   left:0;
   min-width:260px;
   background:#020617;
@@ -105,10 +104,18 @@ opacity:1;
   padding:10px;
   box-shadow:0 20px 50px rgba(0,0,0,0.6);
   z-index:9999;
+
+  /* Smooth animation */
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(10px);
+  transition:all .25s ease;
 }
 
 .submenu.open{
-  display:block;
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0);
 }
 
 .submenu li{
@@ -122,12 +129,12 @@ opacity:1;
   text-decoration:none;
   font-weight:500;
   border-radius:10px;
+  transition:.2s ease;
 }
 
 .submenu a:hover{
   background:rgba(255,255,255,0.08);
 }
-
 
 
 /* ================= HERO SPLIT ================= */
@@ -870,7 +877,7 @@ body{
 
   <!-- WHAT WE DO : submenu opener only -->
   <li class="has-submenu">
-    <a href="javascript:void(0)" onclick="toggleWhatWeDo()">What We Do ▾</a>
+<a href="#" id="whatWeDoTrigger">What We Do ▾</a>
 
     <ul class="submenu" id="whatWeDoMenu">
       <li><a href="services/marketplace-management.html">Marketplace Management</a></li>
@@ -1064,94 +1071,108 @@ help your brand win in competitive marketplaces.
 © 2026 Network Media Inc. All rights reserved.
 </footer>
    
+<script>
 
-   <script>
-
-/* ===== FIXED GOBBLECUBE TABS ===== */
+/* ================= GOBBLECUBE TABS ================= */
 
 const gcTabs = document.querySelectorAll('#services .gc-tab');
 const gcBoxes = document.querySelectorAll('#services .gc-box');
 
-gcTabs.forEach(tab => {
+if(gcTabs.length && gcBoxes.length){
 
-  tab.addEventListener('click', () => {
+  gcTabs.forEach(tab => {
 
-    const targetId = tab.getAttribute('data-tab');
-    const targetBox = document.getElementById(targetId);
+    tab.addEventListener('click', () => {
 
-    // ===== DESKTOP =====
-    if (window.innerWidth > 900) {
+      const targetId = tab.getAttribute('data-tab');
+      const targetBox = document.getElementById(targetId);
 
-      // remove all active
-      gcTabs.forEach(t => t.classList.remove('active'));
-      gcBoxes.forEach(b => b.classList.remove('active'));
+      if(!targetBox) return;
 
-      // remove any mobile accordion
-      document.querySelectorAll('.mobile-accordion')
-        .forEach(el => el.remove());
+      /* ===== DESKTOP ===== */
+      if (window.innerWidth > 900) {
 
-      // activate correct one
-      tab.classList.add('active');
-      targetBox.classList.add('active');
-    }
+        gcTabs.forEach(t => t.classList.remove('active'));
+        gcBoxes.forEach(b => b.classList.remove('active'));
 
-    // ===== MOBILE =====
-    else {
+        document.querySelectorAll('.mobile-accordion')
+          .forEach(el => el.remove());
 
-      // remove existing accordions
-      document.querySelectorAll('.mobile-accordion')
-        .forEach(el => el.remove());
+        tab.classList.add('active');
+        targetBox.classList.add('active');
+      }
 
-      // if already open, close
-      if (tab.querySelector('.mobile-accordion')) return;
+      /* ===== MOBILE ===== */
+      else {
 
-      const clone = targetBox.cloneNode(true);
-      clone.classList.remove('gc-box');
-      clone.classList.add('mobile-accordion');
+        document.querySelectorAll('.mobile-accordion')
+          .forEach(el => el.remove());
 
-      tab.appendChild(clone);
-    }
+        if (tab.querySelector('.mobile-accordion')) return;
+
+        const clone = targetBox.cloneNode(true);
+        clone.classList.remove('gc-box');
+        clone.classList.add('mobile-accordion');
+
+        tab.appendChild(clone);
+      }
+
+    });
 
   });
 
-});
-
-
-/* ===== MOBILE NAV TOGGLE ===== */
-
-const toggle = document.getElementById("mobile-toggle");
-const menu = document.getElementById("nav-links");
-
-toggle.onclick = ()=>{
-  menu.classList.toggle("nav-active");
-};
-
-document.querySelectorAll("#nav-links a").forEach(link=>{
-  link.onclick = (e)=>{
-    if(link.closest('.has-submenu')) return; // submenu opener ko ignore
-    menu.classList.remove("nav-active");
-  };
-});
-      document.addEventListener("click", function(e){
-  const menu = document.getElementById("whatWeDoMenu");
-  const trigger = document.querySelector(".has-submenu");
-
-  if(!trigger.contains(e.target)){
-    menu.classList.remove("open");
-  }
-});
-      /* ===== SUBMENU TOGGLE FUNCTION ===== */
-function toggleWhatWeDo(){
-  const menu = document.getElementById("whatWeDoMenu");
-  menu.classList.toggle("open");
 }
 
+
+/* ================= MOBILE NAV TOGGLE ================= */
+
+const toggle = document.getElementById("mobile-toggle");
+const navMenu = document.getElementById("nav-links");
+
+if(toggle && navMenu){
+
+  toggle.addEventListener("click", ()=>{
+    navMenu.classList.toggle("nav-active");
+  });
+
+  document.querySelectorAll("#nav-links a").forEach(link=>{
+    link.addEventListener("click", ()=>{
+      if(link.closest('.has-submenu')) return;
+      navMenu.classList.remove("nav-active");
+    });
+  });
+
+}
+
+
+/* ================= SUBMENU TOGGLE ================= */
+
+const whatWeDoTrigger = document.getElementById("whatWeDoTrigger");
+const whatWeDoMenu = document.getElementById("whatWeDoMenu");
+
+if(whatWeDoTrigger && whatWeDoMenu){
+
+  whatWeDoTrigger.addEventListener("click", function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    whatWeDoMenu.classList.toggle("open");
+  });
+
+  document.addEventListener("click", function(e){
+    if(!whatWeDoMenu.contains(e.target) &&
+       !whatWeDoTrigger.contains(e.target)){
+      whatWeDoMenu.classList.remove("open");
+    }
+  });
+
+}
 
 </script>
 
 
 </body>
 </html>
+
 
 
 
