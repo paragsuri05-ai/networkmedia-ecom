@@ -87,6 +87,46 @@ nav ul li a:hover{
 color:#ffffff;
 opacity:1;
 }
+   
+/* ================= SUBMENU (DESKTOP + MOBILE) ================= */
+
+.has-submenu{
+  position:relative;
+}
+
+.submenu{
+  display:none;
+  position:absolute;
+  top:100%;
+  left:0;
+  min-width:260px;
+  background:#020617;
+  border-radius:14px;
+  padding:10px;
+  box-shadow:0 20px 50px rgba(0,0,0,0.6);
+  z-index:9999;
+}
+
+.submenu.open{
+  display:block;
+}
+
+.submenu li{
+  list-style:none;
+}
+
+.submenu a{
+  display:block;
+  padding:12px 14px;
+  color:#fff;
+  text-decoration:none;
+  font-weight:500;
+  border-radius:10px;
+}
+
+.submenu a:hover{
+  background:rgba(255,255,255,0.08);
+}
 
 
 
@@ -792,6 +832,7 @@ body{
   .gc-tab{
     width:100%;
     padding:18px 20px !important;
+     
     border-radius:14px !important;
     font-size:15px !important;
   }
@@ -825,11 +866,24 @@ body{
 </div>
 
 <ul class="nav-links" id="nav-links">
-<li><a href="#about">Know Us</a></li>
-<li><a href="#services">What We Do</a></li>
-<li><a href="#trusted">Partners</a></li>
-<li><a href="#reach">Reach Us</a></li>
+  <li><a href="#about">Know Us</a></li>
+
+  <!-- WHAT WE DO : submenu opener only -->
+  <li class="has-submenu">
+    <a href="javascript:void(0)" onclick="toggleWhatWeDo()">What We Do ▾</a>
+
+    <ul class="submenu" id="whatWeDoMenu">
+      <li><a href="services/marketplace-management.html">Marketplace Management</a></li>
+      <li><a href="services/performance-marketing.html">Performance Marketing</a></li>
+      <li><a href="services/growth-strategy.html">Growth Strategy</a></li>
+      <li><a href="services/business-intelligence.html">Business Intelligence</a></li>
+    </ul>
+  </li>
+
+  <li><a href="#trusted">Partners</a></li>
+  <li><a href="#reach">Reach Us</a></li>
 </ul>
+
 
 </nav>
 
@@ -1073,17 +1127,32 @@ toggle.onclick = ()=>{
 };
 
 document.querySelectorAll("#nav-links a").forEach(link=>{
-  link.onclick = ()=>{
+  link.onclick = (e)=>{
+    if(link.closest('.has-submenu')) return; // submenu opener ko ignore
     menu.classList.remove("nav-active");
   };
 });
+      document.addEventListener("click", function(e){
+  const menu = document.getElementById("whatWeDoMenu");
+  const trigger = document.querySelector(".has-submenu");
+
+  if(!trigger.contains(e.target)){
+    menu.classList.remove("open");
+  }
+});
+      /* ===== SUBMENU TOGGLE FUNCTION ===== */
+function toggleWhatWeDo(){
+  const menu = document.getElementById("whatWeDoMenu");
+  menu.classList.toggle("open");
+}
+
 
 </script>
 
 
-
 </body>
 </html>
+
 
 
 
