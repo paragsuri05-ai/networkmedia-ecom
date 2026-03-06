@@ -513,12 +513,22 @@ to{   transform:translateX(-50%); }
 }
   /* ================= NAVBAR ================= */
 
-  /* hamburger */
-  .mobile-toggle{
-  display:flex !important;
-  flex-direction:column;
-  gap:7px;
-  cursor:pointer;
+@media (max-width:900px){
+
+.mobile-toggle{
+display:flex !important;
+flex-direction:column;
+gap:7px;
+cursor:pointer;
+}
+
+.mobile-toggle span{
+width:22px;
+height:2px;
+background:white;
+border-radius:2px;
+}
+
 }
 
 .mobile-toggle span{
@@ -1224,6 +1234,7 @@ if(whatWeDoTrigger && whatWeDoMenu){
 
 </body>
 </html>
+
 
 
 
