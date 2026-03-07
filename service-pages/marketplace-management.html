@@ -11,35 +11,59 @@
 
 <style>
 
-.hero-service{
-padding:120px 10% 60px;
+/* HERO */
+.service-hero{
+padding:120px 10% 80px;
 text-align:center;
 }
 
-.hero-service img{
+.service-hero img{
 width:100%;
 max-width:900px;
-border-radius:16px;
-margin-top:30px;
+border-radius:18px;
+margin-top:40px;
 }
 
-.service-content{
+/* CONTENT */
+.service-section{
 padding:80px 10%;
-max-width:900px;
+max-width:1000px;
 margin:auto;
 }
 
-.platforms{
+.service-section h2{
+margin-bottom:20px;
+}
+
+.cards{
 display:flex;
-gap:30px;
 flex-wrap:wrap;
+gap:25px;
 margin-top:30px;
 }
 
-.platform{
+.card{
+flex:1;
+min-width:220px;
 background:#0f172a;
-padding:20px 26px;
-border-radius:10px;
+padding:24px;
+border-radius:12px;
+}
+
+/* PROCESS */
+.process{
+display:flex;
+flex-wrap:wrap;
+gap:30px;
+margin-top:40px;
+}
+
+.step{
+flex:1;
+min-width:200px;
+background:#111827;
+padding:24px;
+border-radius:12px;
 }
 
 </style>
@@ -48,67 +72,107 @@ border-radius:10px;
 
 <body>
 
-<section class="hero-service">
+<!-- HERO -->
+<section class="service-hero">
 
 <h1>Marketplace Management</h1>
 
 <p>
-Complete end-to-end management of your brand across India's largest marketplaces.
+End-to-end management of your brand across India's leading marketplaces.
 </p>
 
 <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&w=1200">
 
 </section>
 
+<!-- PLATFORMS -->
+<section class="service-section">
 
-<section class="service-content">
+<h2>Platforms We Manage</h2>
 
-<h2>What We Do</h2>
+<div class="cards">
 
-<p>
-We help brands launch, manage and scale their presence across leading ecommerce marketplaces in India.  
-From product listing optimisation to catalog management and advertising, our team ensures your brand performs strongly across every platform.
-</p>
-
-<h2>Marketplaces We Manage</h2>
-
-<div class="platforms">
-
-<div class="platform">Amazon India</div>
-<div class="platform">Flipkart</div>
-<div class="platform">Myntra</div>
-<div class="platform">Nykaa</div>
-<div class="platform">Meesho</div>
-<div class="platform">Blinkit & Quick Commerce</div>
+<div class="card">Amazon India</div>
+<div class="card">Flipkart</div>
+<div class="card">Myntra</div>
+<div class="card">Nykaa</div>
+<div class="card">Meesho</div>
+<div class="card">Quick Commerce (Blinkit / Zepto)</div>
 
 </div>
 
-<h2>Our Approach</h2>
+</section>
 
-<p>
+<!-- SERVICES -->
+<section class="service-section">
 
-• Marketplace onboarding & account setup  
-<br>
-• Product listing optimisation & keyword strategy  
-<br>
-• Catalog & inventory management  
-<br>
-• Pricing optimisation  
-<br>
-• Review management & brand reputation  
-<br>
-• Marketplace analytics & reporting
+<h2>What We Do</h2>
 
-</p>
+<div class="cards">
+
+<div class="card">
+<h3>Marketplace Launch</h3>
+<p>Complete account setup and brand onboarding.</p>
+</div>
+
+<div class="card">
+<h3>Catalog Optimization</h3>
+<p>SEO optimized product listings and images.</p>
+</div>
+
+<div class="card">
+<h3>Pricing Strategy</h3>
+<p>Competitive pricing to win buy box and conversions.</p>
+</div>
+
+<div class="card">
+<h3>Review Management</h3>
+<p>Customer feedback monitoring and reputation growth.</p>
+</div>
+
+</div>
 
 </section>
 
+<!-- PROCESS -->
+<section class="service-section">
 
+<h2>Our Process</h2>
+
+<div class="process">
+
+<div class="step">
+<h3>1. Audit</h3>
+<p>Analyze your current marketplace performance.</p>
+</div>
+
+<div class="step">
+<h3>2. Strategy</h3>
+<p>Create a customized growth plan.</p>
+</div>
+
+<div class="step">
+<h3>3. Execution</h3>
+<p>Implement catalog, marketing and operations.</p>
+</div>
+
+<div class="step">
+<h3>4. Growth</h3>
+<p>Scale revenue with continuous optimisation.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- CTA -->
 <section class="cta">
 
-<h2>Scale your brand across marketplaces</h2>
+<h2>Ready to scale your marketplace sales?</h2>
 
-<a href="mailto:network.media@hotmail.com" class="btn">Start Growing</a>
+<a href="mailto:network.media@hotmail.com" class="btn">
+Start Growing
+</a>
 
 </section>
 
