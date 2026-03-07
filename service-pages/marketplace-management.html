@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -7,255 +8,181 @@
 
 <title>Marketplace Management | Network Media</title>
 
+<link rel="stylesheet" href="../style.css">
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Inter',sans-serif;
-}
-
-body{
-background:#f8fafc;
-color:#111827;
-line-height:1.6;
-}
-
-/* NAVBAR */
-
-header{
-background:#ffffff;
-border-bottom:1px solid #e5e7eb;
-position:sticky;
-top:0;
-z-index:1000;
-}
-
-.navbar{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:18px 8%;
-}
-
-.logo{
-font-weight:700;
-font-size:20px;
-}
-
-nav ul{
-display:flex;
-list-style:none;
-gap:28px;
-}
-
-nav a{
-text-decoration:none;
-color:#111827;
-font-weight:500;
-}
-
-nav a:hover{
-color:#2563eb;
-}
-
-.dropdown{
-position:relative;
-}
-
-.dropdown-menu{
-display:none;
-position:absolute;
-top:30px;
-background:white;
-box-shadow:0 10px 30px rgba(0,0,0,0.08);
-border-radius:8px;
-padding:10px 0;
-width:220px;
-}
-
-.dropdown-menu a{
-display:block;
-padding:10px 18px;
-}
-
-.dropdown:hover .dropdown-menu{
-display:block;
-}
-
 /* HERO */
 
-.hero{
-padding:120px 8%;
+.service-hero{
+
+padding:100px 0;
+background:#f8fafc;
+
+}
+
+.container{
+
+width:90%;
+max-width:1200px;
+margin:auto;
+
+}
+
+.hero-flex{
+
 display:flex;
 align-items:center;
 gap:60px;
 flex-wrap:wrap;
-background:linear-gradient(180deg,#f8fafc,#ffffff);
+
 }
 
 .hero-text{
+
 flex:1;
-min-width:320px;
+
 }
 
-.hero h1{
-font-size:44px;
+.hero-text h1{
+
+font-size:42px;
 margin-bottom:20px;
+
 }
 
-.hero p{
+.hero-text p{
+
 font-size:18px;
-color:#4b5563;
+color:#555;
 margin-bottom:30px;
+
 }
 
-.btn{
-background:linear-gradient(135deg,#2563eb,#1d4ed8);
-color:white;
-padding:14px 26px;
-border-radius:8px;
-text-decoration:none;
-font-weight:600;
-}
+.hero-image{
 
-.hero img{
 flex:1;
-max-width:520px;
-border-radius:12px;
+
 }
 
-/* MARKETPLACE LOGOS */
+.hero-image img{
 
-.logos{
-padding:40px 8%;
-background:white;
-display:flex;
-justify-content:space-between;
-flex-wrap:wrap;
-gap:20px;
-color:#6b7280;
-font-weight:600;
+width:100%;
+border-radius:10px;
+
 }
 
-/* SERVICES GRID */
+/* SERVICES */
 
 .services{
-padding:90px 8%;
+
+padding:80px 0;
+
 }
 
-.section-title{
-text-align:center;
-margin-bottom:50px;
-}
+.services-grid{
 
-.grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:26px;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+
 }
 
-.card{
-background:white;
-padding:28px;
-border-radius:12px;
-border:1px solid #e5e7eb;
+.service-card{
+
+background:#fff;
+padding:30px;
+border-radius:10px;
+box-shadow:0 10px 20px rgba(0,0,0,0.05);
 transition:0.3s;
+
 }
 
-.card:hover{
+.service-card:hover{
+
 transform:translateY(-6px);
-box-shadow:0 12px 25px rgba(0,0,0,0.08);
+
 }
 
-/* FEATURE SECTION */
+/* FEATURE */
 
 .feature{
-padding:100px 8%;
+
+padding:100px 0;
+background:#f9fafb;
+
+}
+
+.feature-flex{
+
 display:flex;
-align-items:center;
 gap:60px;
+align-items:center;
 flex-wrap:wrap;
+
 }
 
 .feature img{
+
 width:420px;
-border-radius:12px;
+border-radius:10px;
+
 }
 
 .feature-text{
-flex:1;
-min-width:300px;
-}
 
-.feature h2{
-margin-bottom:18px;
+flex:1;
+
 }
 
 /* PROCESS */
 
 .process{
-padding:90px 8%;
-background:#f1f5f9;
+
+padding:80px 0;
+
 }
 
-.steps{
+.process-grid{
+
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:30px;
-margin-top:40px;
+gap:25px;
+
 }
 
-.step{
-background:white;
-padding:26px;
-border-radius:10px;
-}
+.process-box{
 
-/* STATS */
+background:#fff;
+padding:25px;
+border-radius:8px;
+box-shadow:0 5px 15px rgba(0,0,0,0.05);
 
-.stats{
-padding:80px 8%;
-background:#ffffff;
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:30px;
-text-align:center;
-}
-
-.stat h3{
-font-size:32px;
-color:#2563eb;
 }
 
 /* CTA */
 
 .cta{
-padding:100px 8%;
+
+padding:80px 0;
 text-align:center;
 background:#111827;
 color:white;
+
 }
 
-.cta h2{
-margin-bottom:20px;
-}
+.cta a{
 
-/* FOOTER */
-
-footer{
-padding:40px 8%;
-background:#020617;
-color:#9ca3af;
-text-align:center;
-}
-
-footer a{
-color:#9ca3af;
+display:inline-block;
+margin-top:20px;
+background:#2563eb;
+color:white;
+padding:14px 28px;
+border-radius:6px;
 text-decoration:none;
+
 }
 
 </style>
@@ -264,112 +191,145 @@ text-decoration:none;
 
 <body>
 
+<!-- HEADER (same as homepage) -->
+
 <header>
 
-<div class="navbar">
+<nav class="navbar">
 
 <div class="logo">Network Media</div>
 
-<nav>
-<ul>
+<ul class="nav-links">
 
 <li><a href="../index.html">Home</a></li>
 
 <li class="dropdown">
+
 <a href="../services.html">Services</a>
 
-<div class="dropdown-menu">
-<a href="marketplace-management.html">Marketplace Management</a>
-<a href="performance-marketing.html">Performance Marketing</a>
-<a href="growth-strategy.html">Growth Strategy</a>
-<a href="business-intelligence.html">Business Intelligence</a>
-</div>
+<ul class="dropdown-menu">
+
+<li><a href="marketplace-management.html">Marketplace Management</a></li>
+
+<li><a href="performance-marketing.html">Performance Marketing</a></li>
+
+<li><a href="growth-strategy.html">Growth Strategy</a></li>
+
+<li><a href="business-intelligence.html">Business Intelligence</a></li>
+
+</ul>
 
 </li>
 
 <li><a href="../about.html">About</a></li>
+
 <li><a href="../contact.html">Contact</a></li>
 
 </ul>
-</nav>
 
-</div>
+</nav>
 
 </header>
 
-<section class="hero">
+<!-- HERO -->
+
+<section class="service-hero">
+
+<div class="container hero-flex">
 
 <div class="hero-text">
 
-<h1>Scale Your Amazon & Flipkart Revenue</h1>
+<h1>Marketplace Management Services</h1>
 
 <p>
-Full-service marketplace management helping brands grow faster on Amazon, Flipkart, Myntra and Quick Commerce platforms.
+
+We help ecommerce brands grow faster on Amazon, Flipkart, Myntra and other marketplaces through data-driven strategy and operational expertise.
+
 </p>
 
-<a class="btn" href="../contact.html">Book Strategy Call</a>
+<a class="btn-primary" href="../contact.html">Book Strategy Call</a>
 
 </div>
+
+<div class="hero-image">
 
 <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d">
 
-</section>
+</div>
 
-<section class="logos">
-
-<span>Amazon</span>
-<span>Flipkart</span>
-<span>Myntra</span>
-<span>Nykaa</span>
-<span>Blinkit</span>
-<span>Meesho</span>
+</div>
 
 </section>
+
+<!-- SERVICES -->
 
 <section class="services">
 
-<div class="section-title">
-<h2>Marketplace Growth Services</h2>
-<p>Everything required to scale ecommerce revenue.</p>
+<div class="container">
+
+<h2>Our Marketplace Services</h2>
+
+<div class="services-grid">
+
+<div class="service-card">
+
+<h3>Account Setup</h3>
+
+<p>Launch and configure seller accounts on leading marketplaces.</p>
+
 </div>
 
-<div class="grid">
+<div class="service-card">
 
-<div class="card">
-<h3>Account Launch</h3>
-<p>Seller account setup and brand onboarding.</p>
+<h3>Listing Optimization</h3>
+
+<p>SEO optimized product listings designed to increase visibility and conversion.</p>
+
 </div>
 
-<div class="card">
-<h3>Catalog Optimization</h3>
-<p>SEO optimised listings that increase conversions.</p>
+<div class="service-card">
+
+<h3>Marketplace Advertising</h3>
+
+<p>Amazon Ads and Flipkart Ads management to scale product visibility.</p>
+
 </div>
 
-<div class="card">
+<div class="service-card">
+
 <h3>Pricing Strategy</h3>
-<p>Smart pricing models to win buy box and scale sales.</p>
+
+<p>Competitive pricing strategies that maximise sales while protecting margins.</p>
+
 </div>
 
-<div class="card">
-<h3>Marketplace Ads</h3>
-<p>Amazon Ads and Flipkart Ads management.</p>
+<div class="service-card">
+
+<h3>Inventory Management</h3>
+
+<p>Maintain healthy inventory levels and prevent stockouts.</p>
+
 </div>
 
-<div class="card">
-<h3>Inventory Planning</h3>
-<p>Prevent stockouts and manage supply planning.</p>
-</div>
+<div class="service-card">
 
-<div class="card">
 <h3>Performance Analytics</h3>
-<p>Data insights to unlock marketplace growth.</p>
+
+<p>Detailed reporting and insights to continuously optimise performance.</p>
+
+</div>
+
 </div>
 
 </div>
 
 </section>
 
+<!-- FEATURE -->
+
 <section class="feature">
+
+<div class="container feature-flex">
 
 <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71">
 
@@ -378,82 +338,91 @@ Full-service marketplace management helping brands grow faster on Amazon, Flipka
 <h2>Data Driven Marketplace Growth</h2>
 
 <p>
-We analyse keyword rankings, category demand and advertising performance to maximise visibility and revenue.
+
+Our team uses category insights, keyword trends and performance data to identify opportunities that increase revenue and profitability.
+
 </p>
 
 </div>
 
+</div>
+
 </section>
+
+<!-- PROCESS -->
 
 <section class="process">
 
-<div class="section-title">
+<div class="container">
+
 <h2>Our Growth Process</h2>
-</div>
 
-<div class="steps">
+<div class="process-grid">
 
-<div class="step">
-<h3>1. Audit</h3>
-<p>Analyse catalog, ads, and competition.</p>
-</div>
+<div class="process-box">
 
-<div class="step">
-<h3>2. Strategy</h3>
-<p>Create marketplace growth roadmap.</p>
-</div>
+<h3>Audit</h3>
 
-<div class="step">
-<h3>3. Execution</h3>
-<p>Implement listing optimisation and ads.</p>
-</div>
-
-<div class="step">
-<h3>4. Scale</h3>
-<p>Continuously optimise and grow revenue.</p>
-</div>
+<p>Analyse catalog, competition and marketplace performance.</p>
 
 </div>
 
-</section>
+<div class="process-box">
 
-<section class="stats">
+<h3>Strategy</h3>
 
-<div class="stat">
-<h3>₹50Cr+</h3>
-<p>Marketplace Revenue Managed</p>
+<p>Create a custom marketplace growth plan.</p>
+
 </div>
 
-<div class="stat">
-<h3>5x</h3>
-<p>Average ROAS</p>
+<div class="process-box">
+
+<h3>Execution</h3>
+
+<p>Implement listings optimisation, advertising and operations.</p>
+
 </div>
 
-<div class="stat">
-<h3>50+</h3>
-<p>Brands Scaled</p>
+<div class="process-box">
+
+<h3>Scale</h3>
+
+<p>Use performance data to continuously grow revenue.</p>
+
 </div>
 
-<div class="stat">
-<h3>500+</h3>
-<p>Campaigns Optimised</p>
+</div>
+
 </div>
 
 </section>
+
+<!-- CTA -->
 
 <section class="cta">
 
-<h2>Ready to grow your marketplace sales?</h2>
+<div class="container">
 
-<a class="btn" href="../contact.html">Start Growing</a>
+<h2>Ready to scale your marketplace revenue?</h2>
+
+<a href="../contact.html">Start Growing</a>
+
+</div>
 
 </section>
 
+<!-- FOOTER -->
+
 <footer>
 
+<div class="container">
+
 <p>© 2026 Network Media</p>
+
+</div>
 
 </footer>
 
 </body>
+
 </html>
