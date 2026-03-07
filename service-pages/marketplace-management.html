@@ -12,66 +12,65 @@
 
 <style>
 
-/* HERO */
+/* HERO BANNER */
 
-.service-hero{
-padding:120px 10% 60px;
-text-align:center;
-max-width:900px;
-margin:auto;
-}
-
-.service-hero h1{
-font-size:38px;
-margin-bottom:15px;
-}
-
-.service-hero p{
-font-size:18px;
-opacity:0.85;
-}
-
-/* IMAGE */
-
-.hero-image{
-margin-top:40px;
+.hero{
+height:420px;
+background:url("https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
 display:flex;
+align-items:center;
 justify-content:center;
+text-align:center;
+color:white;
 }
 
-.hero-image img{
-width:100%;
-max-width:520px;
-border-radius:14px;
+.hero-overlay{
+background:rgba(0,0,0,0.55);
+padding:60px 30px;
+border-radius:12px;
 }
 
-/* SECTIONS */
+.hero h1{
+font-size:44px;
+margin-bottom:10px;
+}
 
-.service-section{
-padding:70px 10%;
-max-width:1100px;
+.hero p{
+font-size:18px;
+opacity:0.9;
+}
+
+/* SECTION */
+
+.section{
+padding:80px 10%;
+max-width:1200px;
 margin:auto;
 text-align:center;
 }
 
-.service-section h2{
-margin-bottom:35px;
-font-size:28px;
+.section h2{
+margin-bottom:40px;
+font-size:30px;
 }
 
 /* CARDS */
 
-.cards{
+.grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:22px;
+gap:25px;
 }
 
 .card{
-background:#111827;
-padding:22px;
+background:#0f172a;
+padding:28px;
 border-radius:12px;
-font-size:15px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-6px);
 }
 
 /* PROCESS */
@@ -79,19 +78,21 @@ font-size:15px;
 .process{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:22px;
+gap:25px;
 }
 
 .step{
-background:#0f172a;
-padding:22px;
+background:#111827;
+padding:25px;
 border-radius:12px;
 }
 
 /* CTA */
 
 .cta{
-padding:80px 10%;
+background:#4f46e5;
+color:white;
+padding:70px 20px;
 text-align:center;
 }
 
@@ -99,13 +100,13 @@ text-align:center;
 margin-bottom:20px;
 }
 
-.btn{
-display:inline-block;
+.cta a{
+background:white;
+color:#111;
 padding:12px 26px;
-background:#4f46e5;
-color:white;
 border-radius:8px;
 text-decoration:none;
+font-weight:600;
 }
 
 </style>
@@ -114,61 +115,20 @@ text-decoration:none;
 
 <body>
 
-<!-- HEADER -->
-
-<header class="navbar">
-
-<a href="../index.html" class="nav-logo">
-Network Media Inc.
-</a>
-
-<nav>
-
-<ul class="nav-links">
-
-<li><a href="../index.html">Home</a></li>
-
-<li class="has-submenu">
-
-<a href="#">What We Do ▾</a>
-
-<ul class="submenu">
-
-<li><a href="marketplace-management.html">Marketplace Management</a></li>
-
-<li><a href="performance-marketing.html">Performance Marketing</a></li>
-
-<li><a href="growth-strategy.html">Growth Strategy</a></li>
-
-<li><a href="business-intelligence.html">Business Intelligence</a></li>
-
-</ul>
-
-</li>
-
-<li><a href="../index.html#trusted">Partners</a></li>
-
-<li><a href="../index.html#contact">Contact</a></li>
-
-</ul>
-
-</nav>
-
-</header>
+<!-- NAVBAR -->
+<div id="navbar"></div>
 
 <!-- HERO -->
 
-<section class="service-hero">
+<section class="hero">
+
+<div class="hero-overlay">
 
 <h1>Marketplace Management</h1>
 
 <p>
-Complete marketplace management to grow your brand on Amazon, Flipkart, Myntra and other ecommerce platforms in India.
+Scale your brand across Amazon, Flipkart, Myntra and India's fastest growing ecommerce marketplaces.
 </p>
-
-<div class="hero-image">
-
-<img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&w=900">
 
 </div>
 
@@ -176,22 +136,17 @@ Complete marketplace management to grow your brand on Amazon, Flipkart, Myntra a
 
 <!-- PLATFORMS -->
 
-<section class="service-section">
+<section class="section">
 
 <h2>Platforms We Manage</h2>
 
-<div class="cards">
+<div class="grid">
 
 <div class="card">Amazon India</div>
-
 <div class="card">Flipkart</div>
-
 <div class="card">Myntra</div>
-
 <div class="card">Nykaa</div>
-
 <div class="card">Meesho</div>
-
 <div class="card">Quick Commerce (Blinkit / Zepto)</div>
 
 </div>
@@ -200,42 +155,30 @@ Complete marketplace management to grow your brand on Amazon, Flipkart, Myntra a
 
 <!-- SERVICES -->
 
-<section class="service-section">
+<section class="section">
 
-<h2>What We Do</h2>
+<h2>Marketplace Services</h2>
 
-<div class="cards">
+<div class="grid">
 
 <div class="card">
-
 <h3>Marketplace Launch</h3>
-
-<p>Complete seller account setup and brand onboarding.</p>
-
+<p>Account setup and seller onboarding.</p>
 </div>
 
 <div class="card">
-
 <h3>Catalog Optimisation</h3>
-
-<p>SEO optimized product titles, descriptions and images.</p>
-
+<p>SEO driven listings and product images.</p>
 </div>
 
 <div class="card">
-
 <h3>Pricing Strategy</h3>
-
-<p>Competitive pricing strategies to improve conversions.</p>
-
+<p>Smart pricing to improve conversions.</p>
 </div>
 
 <div class="card">
-
 <h3>Review Management</h3>
-
-<p>Monitor and improve product reviews and ratings.</p>
-
+<p>Build trust and improve product ratings.</p>
 </div>
 
 </div>
@@ -244,41 +187,37 @@ Complete marketplace management to grow your brand on Amazon, Flipkart, Myntra a
 
 <!-- PROCESS -->
 
-<section class="service-section">
+<section class="section">
 
-<h2>Our Process</h2>
+<h2>Our Growth Process</h2>
 
 <div class="process">
 
 <div class="step">
 
 <h3>Audit</h3>
-
-<p>Analyse current marketplace performance.</p>
+<p>Marketplace performance analysis</p>
 
 </div>
 
 <div class="step">
 
 <h3>Strategy</h3>
-
-<p>Create customised growth plan.</p>
+<p>Create brand growth roadmap</p>
 
 </div>
 
 <div class="step">
 
 <h3>Execution</h3>
-
-<p>Implement catalog and marketing optimisation.</p>
+<p>Catalog + advertising optimisation</p>
 
 </div>
 
 <div class="step">
 
 <h3>Scale</h3>
-
-<p>Scale revenue through continuous optimisation.</p>
+<p>Continuous revenue growth</p>
 
 </div>
 
@@ -290,21 +229,19 @@ Complete marketplace management to grow your brand on Amazon, Flipkart, Myntra a
 
 <section class="cta">
 
-<h2>Ready to grow your marketplace sales?</h2>
+<h2>Ready to scale your marketplace sales?</h2>
 
-<a href="mailto:network.media@hotmail.com" class="btn">
-Contact Us
+<a href="mailto:network.media@hotmail.com">
+Start Growing
 </a>
 
 </section>
 
 <!-- FOOTER -->
 
-<footer class="footer">
+<div id="footer"></div>
 
-<p>© 2026 Network Media Inc.</p>
-
-</footer>
+<script src="../load-components.js"></script>
 
 </body>
 
