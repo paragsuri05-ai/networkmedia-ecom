@@ -1,5 +1,7 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -7,7 +9,7 @@
 
 <title>Marketplace Management | Network Media</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
@@ -26,7 +28,7 @@ color:white;
 line-height:1.7;
 }
 
-/* NAVBAR (same as homepage) */
+/* NAVBAR */
 
 nav{
 position:fixed;
@@ -37,7 +39,7 @@ display:flex;
 align-items:center;
 justify-content:space-between;
 padding:12px 40px;
-gap:90px;
+gap:80px;
 background:rgba(15,23,42,0.55);
 backdrop-filter:blur(10px);
 border:1px solid rgba(255,255,255,0.12);
@@ -49,112 +51,188 @@ z-index:1000;
 
 .nav-logo{
 font-size:16px;
-font-weight:500;
+font-weight:600;
 text-decoration:none;
 color:white;
 }
 
 .nav-links{
 display:flex;
-gap:42px;
-margin-left:auto;
+gap:40px;
 list-style:none;
 }
 
 .nav-links a{
 text-decoration:none;
-color:#dff9ff;
+color:#e5faff;
 font-size:14px;
+}
+
+/* DROPDOWN */
+
+.has-submenu{
+position:relative;
+}
+
+.submenu{
+position:absolute;
+top:120%;
+left:50%;
+transform:translateX(-50%);
+min-width:260px;
+background:#111827;
+border-radius:14px;
+padding:10px;
+box-shadow:0 20px 50px rgba(0,0,0,0.6);
+opacity:0;
+visibility:hidden;
+transition:.25s;
+}
+
+.submenu li{
+list-style:none;
+}
+
+.submenu a{
+display:block;
+padding:10px;
+border-radius:8px;
+}
+
+.submenu a:hover{
+background:rgba(255,255,255,0.08);
+}
+
+.submenu.open{
+opacity:1;
+visibility:visible;
 }
 
 /* HERO */
 
 .hero{
-padding:150px 10% 80px;
+padding:160px 10% 90px;
+
+background:
+radial-gradient(circle at 20% 20%, #00d4ff33, transparent 40%),
+radial-gradient(circle at 80% 80%, #0066ff33, transparent 40%);
+
 text-align:center;
 }
 
 .hero h1{
-font-size:52px;
-margin-bottom:20px;
+font-size:56px;
+font-weight:800;
+}
+
+.highlight{
+background:linear-gradient(45deg,#00d4ff,#4f8cff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
 .hero p{
-max-width:700px;
+margin-top:20px;
+max-width:720px;
+margin-left:auto;
+margin-right:auto;
+font-size:18px;
+opacity:.85;
+}
+
+/* SECTION */
+
+.section{
+padding:100px 10%;
+text-align:center;
+}
+
+.section h2{
+font-size:40px;
+margin-bottom:20px;
+}
+
+.section p{
+max-width:760px;
 margin:auto;
 opacity:.8;
 }
 
-/* PRODUCTS GRID (Gobble style) */
+/* SERVICES GRID */
 
-.products{
-padding:80px 10%;
+.services-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:40px;
+gap:30px;
+margin-top:60px;
 }
 
-.card{
-
-background:rgba(255,255,255,0.04);
-border:1px solid rgba(255,255,255,0.1);
-
-padding:40px 30px;
-
-border-radius:20px;
-
+.service-card{
+background:rgba(255,255,255,0.05);
+padding:30px;
+border-radius:16px;
+border:1px solid rgba(255,255,255,0.08);
 transition:.3s;
 }
 
-.card:hover{
+.service-card:hover{
 transform:translateY(-8px);
 background:rgba(255,255,255,0.08);
 }
 
-.card h3{
-margin-bottom:12px;
-font-size:22px;
+.service-card h3{
+margin-top:10px;
+font-size:20px;
 }
 
-.card p{
-opacity:.75;
+.service-card p{
 font-size:15px;
+opacity:.8;
+margin-top:10px;
+}
+
+/* PROCESS */
+
+.process{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:30px;
+margin-top:60px;
+}
+
+.step{
+background:#0f172a;
+padding:30px;
+border-radius:14px;
+}
+
+.step h3{
+color:#00d4ff;
+margin-bottom:10px;
 }
 
 /* CTA */
 
 .cta{
-
 padding:120px 10%;
 text-align:center;
-
 }
 
 .btn{
-
 display:inline-block;
-margin-top:25px;
-
+margin-top:30px;
 padding:14px 30px;
-
 background:linear-gradient(45deg,#00d4ff,#007bff);
-
 border-radius:10px;
-
 text-decoration:none;
 color:white;
 font-weight:600;
-
 }
 
-/* FOOTER */
-
 footer{
-background:#050a14;
-padding:30px;
 text-align:center;
+padding:40px;
 opacity:.6;
-margin-top:80px;
 }
 
 </style>
@@ -173,10 +251,22 @@ margin-top:80px;
 
 <li><a href="../index.html#about">Know Us</a></li>
 
-<li><a href="#">What We Do</a></li>
+<li class="has-submenu">
+
+<a href="#" id="whatWeDoTrigger">What We Do ▾</a>
+
+<ul class="submenu" id="whatWeDoMenu">
+
+<li><a href="marketplace-management.html">Marketplace Management</a></li>
+<li><a href="performance-marketing.html">Performance Marketing</a></li>
+<li><a href="growth-strategy.html">Growth Strategy</a></li>
+<li><a href="business-intelligence.html">Business Intelligence</a></li>
+
+</ul>
+
+</li>
 
 <li><a href="../index.html#trusted">Partners</a></li>
-
 <li><a href="../index.html#reach">Reach Us</a></li>
 
 </ul>
@@ -187,77 +277,87 @@ margin-top:80px;
 
 <section class="hero">
 
-<h1>Marketplace Management</h1>
+<h1>Marketplace <span class="highlight">Management</span></h1>
 
 <p>
-
-We help brands scale across Amazon, Flipkart, Myntra, Nykaa and global marketplaces with data-driven strategies.
-
+We help brands launch, manage and scale across Amazon, Flipkart, Myntra, Nykaa and global marketplaces using data-driven ecommerce strategies.
 </p>
 
 </section>
 
-<!-- SERVICES GRID -->
+<!-- SERVICES -->
 
-<section class="products">
+<section class="section">
 
-<div class="card">
+<h2>End-to-End Marketplace Services</h2>
 
+<p>
+From launching your brand to scaling marketplace sales, our team manages every aspect of ecommerce operations.
+</p>
+
+<div class="services-grid">
+
+<div class="service-card">
 <h3>Marketplace Launch</h3>
-
-<p>
-Complete onboarding, seller account setup and marketplace compliance.
-</p>
-
+<p>Account setup, onboarding and brand registry across marketplaces.</p>
 </div>
 
-<div class="card">
-
+<div class="service-card">
 <h3>Catalog Optimization</h3>
-
-<p>
-SEO optimized listings with high converting product pages.
-</p>
-
+<p>SEO-optimized product listings designed to increase conversions.</p>
 </div>
 
-<div class="card">
-
+<div class="service-card">
 <h3>Advertising Management</h3>
-
-<p>
-Amazon Ads and marketplace campaigns designed for profitable growth.
-</p>
-
+<p>Amazon Ads and marketplace advertising for profitable growth.</p>
 </div>
 
-<div class="card">
-
+<div class="service-card">
 <h3>Pricing Strategy</h3>
-
-<p>
-Smart pricing and competitor analysis to win the buy box.
-</p>
-
+<p>Competitive pricing strategies to improve visibility and sales.</p>
 </div>
 
-<div class="card">
-
+<div class="service-card">
 <h3>Inventory Planning</h3>
+<p>Demand forecasting and inventory management.</p>
+</div>
 
-<p>
-Demand forecasting and stock planning across multiple marketplaces.
-</p>
+<div class="service-card">
+<h3>Review Management</h3>
+<p>Improve ratings and build trust through reputation management.</p>
+</div>
 
 </div>
 
-<div class="card">
+</section>
 
-<h3>Growth Strategy</h3>
+<!-- PROCESS -->
 
-<p>
-Scale your brand with expansion into new marketplaces globally.
-</p>
+<section class="section">
+
+<h2>Our Marketplace Growth Process</h2>
+
+<div class="process">
+
+<div class="step">
+<h3>1. Audit</h3>
+<p>Analyze marketplace performance and competitors.</p>
+</div>
+
+<div class="step">
+<h3>2. Strategy</h3>
+<p>Create a customised ecommerce growth strategy.</p>
+</div>
+
+<div class="step">
+<h3>3. Execution</h3>
+<p>Implement catalog optimization and ads.</p>
+</div>
+
+<div class="step">
+<h3>4. Scale</h3>
+<p>Expand across marketplaces and increase revenue.</p>
+</div>
 
 </div>
 
@@ -267,17 +367,40 @@ Scale your brand with expansion into new marketplaces globally.
 
 <section class="cta">
 
-<h2>Ready to scale your marketplace business?</h2>
+<h2>Ready to grow your marketplace sales?</h2>
 
 <a href="mailto:network.media@hotmail.com" class="btn">Start Growing</a>
 
 </section>
 
 <footer>
-
 © 2026 Network Media Inc.
-
 </footer>
+
+<!-- DROPDOWN SCRIPT -->
+
+<script>
+
+const trigger = document.getElementById("whatWeDoTrigger");
+const menu = document.getElementById("whatWeDoMenu");
+
+trigger.addEventListener("click",function(e){
+
+e.preventDefault();
+menu.classList.toggle("open");
+
+});
+
+document.addEventListener("click",function(e){
+
+if(!menu.contains(e.target) && !trigger.contains(e.target)){
+menu.classList.remove("open");
+}
+
+});
+
+</script>
 
 </body>
 </html>
+```
