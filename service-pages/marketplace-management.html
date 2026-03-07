@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -12,58 +13,99 @@
 <style>
 
 /* HERO */
+
 .service-hero{
-padding:120px 10% 80px;
+padding:120px 10% 60px;
 text-align:center;
-}
-
-.service-hero img{
-width:100%;
 max-width:900px;
-border-radius:18px;
-margin-top:40px;
-}
-
-/* CONTENT */
-.service-section{
-padding:80px 10%;
-max-width:1000px;
 margin:auto;
 }
 
-.service-section h2{
-margin-bottom:20px;
+.service-hero h1{
+font-size:38px;
+margin-bottom:15px;
 }
 
-.cards{
+.service-hero p{
+font-size:18px;
+opacity:0.85;
+}
+
+/* IMAGE */
+
+.hero-image{
+margin-top:40px;
 display:flex;
-flex-wrap:wrap;
-gap:25px;
-margin-top:30px;
+justify-content:center;
+}
+
+.hero-image img{
+width:100%;
+max-width:520px;
+border-radius:14px;
+}
+
+/* SECTIONS */
+
+.service-section{
+padding:70px 10%;
+max-width:1100px;
+margin:auto;
+text-align:center;
+}
+
+.service-section h2{
+margin-bottom:35px;
+font-size:28px;
+}
+
+/* CARDS */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:22px;
 }
 
 .card{
-flex:1;
-min-width:220px;
-background:#0f172a;
-padding:24px;
+background:#111827;
+padding:22px;
 border-radius:12px;
+font-size:15px;
 }
 
 /* PROCESS */
+
 .process{
-display:flex;
-flex-wrap:wrap;
-gap:30px;
-margin-top:40px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:22px;
 }
 
 .step{
-flex:1;
-min-width:200px;
-background:#111827;
-padding:24px;
+background:#0f172a;
+padding:22px;
 border-radius:12px;
+}
+
+/* CTA */
+
+.cta{
+padding:80px 10%;
+text-align:center;
+}
+
+.cta h2{
+margin-bottom:20px;
+}
+
+.btn{
+display:inline-block;
+padding:12px 26px;
+background:#4f46e5;
+color:white;
+border-radius:8px;
+text-decoration:none;
 }
 
 </style>
@@ -72,20 +114,68 @@ border-radius:12px;
 
 <body>
 
+<!-- HEADER -->
+
+<header class="navbar">
+
+<a href="../index.html" class="nav-logo">
+Network Media Inc.
+</a>
+
+<nav>
+
+<ul class="nav-links">
+
+<li><a href="../index.html">Home</a></li>
+
+<li class="has-submenu">
+
+<a href="#">What We Do ▾</a>
+
+<ul class="submenu">
+
+<li><a href="marketplace-management.html">Marketplace Management</a></li>
+
+<li><a href="performance-marketing.html">Performance Marketing</a></li>
+
+<li><a href="growth-strategy.html">Growth Strategy</a></li>
+
+<li><a href="business-intelligence.html">Business Intelligence</a></li>
+
+</ul>
+
+</li>
+
+<li><a href="../index.html#trusted">Partners</a></li>
+
+<li><a href="../index.html#contact">Contact</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
 <!-- HERO -->
+
 <section class="service-hero">
 
 <h1>Marketplace Management</h1>
 
 <p>
-End-to-end management of your brand across India's leading marketplaces.
+Complete marketplace management to grow your brand on Amazon, Flipkart, Myntra and other ecommerce platforms in India.
 </p>
 
-<img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&w=1200">
+<div class="hero-image">
+
+<img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&w=900">
+
+</div>
 
 </section>
 
 <!-- PLATFORMS -->
+
 <section class="service-section">
 
 <h2>Platforms We Manage</h2>
@@ -93,10 +183,15 @@ End-to-end management of your brand across India's leading marketplaces.
 <div class="cards">
 
 <div class="card">Amazon India</div>
+
 <div class="card">Flipkart</div>
+
 <div class="card">Myntra</div>
+
 <div class="card">Nykaa</div>
+
 <div class="card">Meesho</div>
+
 <div class="card">Quick Commerce (Blinkit / Zepto)</div>
 
 </div>
@@ -104,6 +199,7 @@ End-to-end management of your brand across India's leading marketplaces.
 </section>
 
 <!-- SERVICES -->
+
 <section class="service-section">
 
 <h2>What We Do</h2>
@@ -111,23 +207,35 @@ End-to-end management of your brand across India's leading marketplaces.
 <div class="cards">
 
 <div class="card">
+
 <h3>Marketplace Launch</h3>
-<p>Complete account setup and brand onboarding.</p>
+
+<p>Complete seller account setup and brand onboarding.</p>
+
 </div>
 
 <div class="card">
-<h3>Catalog Optimization</h3>
-<p>SEO optimized product listings and images.</p>
+
+<h3>Catalog Optimisation</h3>
+
+<p>SEO optimized product titles, descriptions and images.</p>
+
 </div>
 
 <div class="card">
+
 <h3>Pricing Strategy</h3>
-<p>Competitive pricing to win buy box and conversions.</p>
+
+<p>Competitive pricing strategies to improve conversions.</p>
+
 </div>
 
 <div class="card">
+
 <h3>Review Management</h3>
-<p>Customer feedback monitoring and reputation growth.</p>
+
+<p>Monitor and improve product reviews and ratings.</p>
+
 </div>
 
 </div>
@@ -135,6 +243,7 @@ End-to-end management of your brand across India's leading marketplaces.
 </section>
 
 <!-- PROCESS -->
+
 <section class="service-section">
 
 <h2>Our Process</h2>
@@ -142,23 +251,35 @@ End-to-end management of your brand across India's leading marketplaces.
 <div class="process">
 
 <div class="step">
-<h3>1. Audit</h3>
-<p>Analyze your current marketplace performance.</p>
+
+<h3>Audit</h3>
+
+<p>Analyse current marketplace performance.</p>
+
 </div>
 
 <div class="step">
-<h3>2. Strategy</h3>
-<p>Create a customized growth plan.</p>
+
+<h3>Strategy</h3>
+
+<p>Create customised growth plan.</p>
+
 </div>
 
 <div class="step">
-<h3>3. Execution</h3>
-<p>Implement catalog, marketing and operations.</p>
+
+<h3>Execution</h3>
+
+<p>Implement catalog and marketing optimisation.</p>
+
 </div>
 
 <div class="step">
-<h3>4. Growth</h3>
-<p>Scale revenue with continuous optimisation.</p>
+
+<h3>Scale</h3>
+
+<p>Scale revenue through continuous optimisation.</p>
+
 </div>
 
 </div>
@@ -166,15 +287,25 @@ End-to-end management of your brand across India's leading marketplaces.
 </section>
 
 <!-- CTA -->
+
 <section class="cta">
 
-<h2>Ready to scale your marketplace sales?</h2>
+<h2>Ready to grow your marketplace sales?</h2>
 
 <a href="mailto:network.media@hotmail.com" class="btn">
-Start Growing
+Contact Us
 </a>
 
 </section>
 
+<!-- FOOTER -->
+
+<footer class="footer">
+
+<p>© 2026 Network Media Inc.</p>
+
+</footer>
+
 </body>
+
 </html>
