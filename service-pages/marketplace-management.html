@@ -8,6 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Marketplace Management | Network Media</title>
+  <link rel="stylesheet" href="../style.css">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
@@ -28,45 +29,6 @@ color:white;
 line-height:1.7;
 }
 
-/* NAVBAR */
-
-nav{
-position:fixed;
-top:16px;
-left:50%;
-transform:translateX(-50%);
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:12px 40px;
-gap:80px;
-background:rgba(15,23,42,0.55);
-backdrop-filter:blur(10px);
-border:1px solid rgba(255,255,255,0.12);
-border-radius:40px;
-width:820px;
-max-width:92%;
-z-index:1000;
-}
-
-.nav-logo{
-font-size:16px;
-font-weight:600;
-text-decoration:none;
-color:white;
-}
-
-.nav-links{
-display:flex;
-gap:40px;
-list-style:none;
-}
-
-.nav-links a{
-text-decoration:none;
-color:#e5faff;
-font-size:14px;
-}
 
 /* DROPDOWN */
 
@@ -238,26 +200,6 @@ opacity:.6;
 /* MOBILE RESPONSIVE */
 
 @media (max-width:768px){
-
-nav{
-width:92%;
-padding:10px 18px;
-gap:10px;
-flex-direction:column;
-border-radius:20px;
-}
-
-.nav-links{
-flex-direction:column;
-align-items:center;
-gap:14px;
-margin-top:8px;
-}
-
-.nav-links a{
-font-size:14px;
-}
-
 .submenu{
 position:static;
 transform:none;
