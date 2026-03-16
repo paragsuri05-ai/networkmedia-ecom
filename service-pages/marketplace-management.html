@@ -241,24 +241,27 @@ padding:80px 6%;
   /* MOBILE NAV DRAWER FIX */
 
 .nav-links{
+display:flex;
+flex-direction:column;
+
 position:fixed;
 top:70px;
 right:-100%;
 width:90%;
-  display:flex; 
+
 background:rgba(17,24,39,0.95);
 backdrop-filter:blur(16px);
 
 border-radius:22px;
 border:1px solid rgba(255,255,255,0.08);
 
-flex-direction:column;
 padding:30px 24px 40px;
 gap:16px;
 
 transition:0.4s ease;
 z-index:9998;
 }
+
 
 .nav-links.nav-active{
 right:5%;
