@@ -248,12 +248,16 @@ padding:80px 6%;
 <body>
 
 <!-- NAVBAR -->
-
 <nav>
 
 <a href="../index.html" class="nav-logo">Network Media Inc.</a>
 
-<ul class="nav-links">
+<div class="mobile-toggle" id="mobile-toggle">
+<span></span>
+<span></span>
+</div>
+
+<ul class="nav-links" id="nav-links">
 
 <li><a href="../index.html#about">Know Us</a></li>
 
@@ -383,27 +387,47 @@ From launching your brand to scaling marketplace sales, our team manages every a
 © 2026 Network Media Inc.
 </footer>
 
-<!-- DROPDOWN SCRIPT -->
-
 <script>
+
+/* ===== DROPDOWN ===== */
 
 const trigger = document.getElementById("whatWeDoTrigger");
 const menu = document.getElementById("whatWeDoMenu");
 
-trigger.addEventListener("click",function(e){
+if(trigger && menu){
 
+trigger.addEventListener("click",function(e){
 e.preventDefault();
 menu.classList.toggle("open");
-
 });
 
 document.addEventListener("click",function(e){
-
 if(!menu.contains(e.target) && !trigger.contains(e.target)){
 menu.classList.remove("open");
 }
-
 });
+
+}
+
+/* ===== MOBILE NAV TOGGLE ===== */
+
+const toggle = document.getElementById("mobile-toggle");
+const navMenu = document.getElementById("nav-links");
+
+if(toggle && navMenu){
+
+toggle.addEventListener("click", ()=>{
+navMenu.classList.toggle("nav-active");
+});
+
+document.querySelectorAll("#nav-links a").forEach(link=>{
+link.addEventListener("click", ()=>{
+if(link.closest('.has-submenu')) return;
+navMenu.classList.remove("nav-active");
+});
+});
+
+}
 
 </script>
 
