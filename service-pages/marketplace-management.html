@@ -29,6 +29,21 @@ color:white;
 line-height:1.7;
 }
 
+  /* MOBILE TOGGLE */
+.mobile-toggle{
+display:flex;
+flex-direction:column;
+gap:6px;
+cursor:pointer;
+}
+
+.mobile-toggle span{
+width:22px;
+height:2px;
+background:white;
+border-radius:2px;
+}
+
 /* HERO */
 
 .hero{
@@ -198,7 +213,6 @@ grid-template-columns:1fr;
 padding:80px 6%;
 }
   /* MOBILE NAV DRAWER FIX */
-
 .nav-links{
 display:flex;
 flex-direction:column;
@@ -206,6 +220,8 @@ flex-direction:column;
 position:fixed;
 top:70px;
 right:-100%;
+left:auto;   /* ⭐ THIS FIX */
+
 width:90%;
 
 background:rgba(17,24,39,0.95);
@@ -221,9 +237,8 @@ transition:0.4s ease;
 z-index:9998;
 }
 
-
 .nav-links.nav-active{
-right:5%;
+right:0%;
 }
 
 .nav-links li{
