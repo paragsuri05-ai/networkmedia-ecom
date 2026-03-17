@@ -92,8 +92,8 @@ position:relative;
 .submenu{
 position:absolute;
 top:120%;
-left:50%;
-transform:translateX(-50%);
+left:0;
+transform:none;
 min-width:260px;
 
 background:#111827;
@@ -107,6 +107,11 @@ visibility:hidden;
 pointer-events:none;
 
 transition:all 0.25s ease;
+}
+  .has-submenu{
+position:relative;
+display:flex;
+align-items:center;
 }
 
 /* Dropdown Items */
