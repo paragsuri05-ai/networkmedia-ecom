@@ -28,10 +28,97 @@ background:#0b1220;
 color:white;
 line-height:1.7;
 }
+  /* NAVBAR STYLE (HOMEPAGE SAME) */
 
+nav{
+position:fixed;
+top:16px;
+left:50%;
+transform:translateX(-50%);
+
+display:flex;
+align-items:center;
+justify-content:space-between;
+
+padding:12px 30px;
+gap:40px;
+
+background:rgba(15,23,42,0.55);
+backdrop-filter:blur(10px);
+
+border:1px solid rgba(255,255,255,0.12);
+border-radius:40px;
+
+width:820px;
+max-width:92%;
+
+z-index:1000;
+}
+
+.nav-links{
+display:flex;
+gap:40px;
+list-style:none;
+}
+/* DROPDOWN */
+
+.has-submenu{
+position:relative;
+}
+
+/* Dropdown Box */
+.submenu{
+position:absolute;
+top:120%;
+left:50%;
+transform:translateX(-50%);
+min-width:260px;
+
+background:#111827;
+border-radius:14px;
+padding:10px;
+
+box-shadow:0 20px 50px rgba(0,0,0,0.6);
+
+opacity:0;
+visibility:hidden;
+pointer-events:none;
+
+transition:all 0.25s ease;
+}
+
+/* Dropdown Items */
+.submenu li{
+list-style:none;
+}
+
+.submenu a{
+display:block;
+padding:10px;
+border-radius:8px;
+transition:0.2s;
+}
+
+.submenu a:hover{
+background:rgba(255,255,255,0.08);
+}
+
+/* Desktop Hover */
+.has-submenu:hover .submenu{
+opacity:1;
+visibility:visible;
+pointer-events:auto;
+}
+
+/* Mobile Click (JS controlled) */
+.submenu.open{
+opacity:1;
+visibility:visible;
+pointer-events:auto;
+}
   /* MOBILE TOGGLE */
 .mobile-toggle{
-display:flex;
+display:none;
 flex-direction:column;
 gap:6px;
 cursor:pointer;
@@ -237,8 +324,18 @@ transition:0.4s ease;
 z-index:9998;
 }
 
+  .submenu{
+display:none;
+}
+
+.submenu.open{
+display:block;
+}
 .nav-links.nav-active{
-right:0%;
+right:5%;
+}
+  .mobile-toggle{
+display:flex;
 }
 
 .nav-links li{
