@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,120 +12,384 @@
 
 <style>
 
-/* SAME CSS AS YOUR ORIGINAL — NO CHANGE */
+/* GLOBAL */
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
 body{background:#0b1220;color:white;line-height:1.7;}
 
+/* NAVBAR */
 nav{
-position:fixed;top:16px;left:50%;transform:translateX(-50%);
-display:flex;align-items:center;justify-content:space-between;
-padding:12px 30px;gap:90px;
-background:rgba(15,23,42,0.55);backdrop-filter:blur(10px);
-border:1px solid rgba(255,255,255,0.12);border-radius:40px;
+position:fixed;
+top:16px;
+left:50%;
+transform:translateX(-50%);
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:12px 30px;
+gap:90px;
+background:rgba(15,23,42,0.55);
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,0.12);
+border-radius:40px;
 box-shadow:0 8px 30px rgba(0,0,0,.45);
-width:900px;max-width:92%;z-index:1000;
+width:900px;
+max-width:92%;
+z-index:1000;
 }
 
-.nav-links{display:flex;gap:40px;list-style:none;}
-.nav-links a{text-decoration:none;color:#dff9ff;font-size:14px;font-weight:500;opacity:.9;}
-.nav-logo{font-size:16px;font-weight:500;text-decoration:none;color:white;}
+.nav-links{
+display:flex;
+gap:40px;
+list-style:none;
+}
 
+.nav-links a{
+text-decoration:none;
+color:#dff9ff;
+font-size:14px;
+font-weight:500;
+opacity:.9;
+transition:.25s;
+}
+
+.nav-links a:hover{
+color:#fff;
+opacity:1;
+}
+
+.nav-logo{
+font-size:16px;
+font-weight:500;
+color:#fff;
+text-decoration:none;
+}
+
+/* DROPDOWN */
 .has-submenu{position:relative;}
 
 .submenu{
-position:absolute;top:120%;left:50%;transform:translateX(-50%);
-min-width:260px;background:#111827;border-radius:14px;padding:10px;
+position:absolute;
+top:120%;
+left:50%;
+transform:translateX(-50%);
+min-width:260px;
+background:#111827;
+border-radius:14px;
+padding:10px;
 box-shadow:0 20px 50px rgba(0,0,0,0.6);
-opacity:0;visibility:hidden;pointer-events:none;
-transition:all 0.25s ease;
+opacity:0;
+visibility:hidden;
+pointer-events:none;
+transition:all .25s ease;
 }
 
-.submenu a{display:block;padding:10px;border-radius:8px;}
-.has-submenu:hover .submenu{opacity:1;visibility:visible;pointer-events:auto;}
-.submenu.open{opacity:1;visibility:visible;pointer-events:auto;}
+.submenu a{
+display:block;
+padding:10px;
+border-radius:8px;
+}
 
-.mobile-toggle{display:none;}
+.submenu a:hover{
+background:rgba(255,255,255,0.08);
+}
 
-.hero{padding:200px 10% 100px;text-align:center;}
-.hero h1{font-size:56px;font-weight:800;}
-.highlight{background:linear-gradient(45deg,#00d4ff,#4f8cff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-.hero p{margin-top:20px;max-width:720px;margin:auto;font-size:18px;opacity:.85;}
+/* DESKTOP HOVER */
+.has-submenu:hover .submenu{
+opacity:1;
+visibility:visible;
+pointer-events:auto;
+}
 
-.section{padding:100px 10%;text-align:center;}
-.section h2{font-size:40px;margin-bottom:20px;}
-.section p{max-width:760px;margin:auto;opacity:.8;}
+/* MOBILE OPEN */
+.submenu.open{
+opacity:1;
+visibility:visible;
+pointer-events:auto;
+}
 
-.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:30px;margin-top:60px;}
+/* MOBILE TOGGLE */
+.mobile-toggle{
+display:none;
+flex-direction:column;
+gap:5px;
+cursor:pointer;
+}
 
-.service-card{background:rgba(255,255,255,0.05);padding:30px;border-radius:16px;border:1px solid rgba(255,255,255,0.08);}
-.service-card:hover{transform:translateY(-8px);}
+.mobile-toggle span{
+width:24px;
+height:2px;
+background:#fff;
+}
 
-.process{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;margin-top:60px;}
-.step{background:#0f172a;padding:30px;border-radius:14px;}
+/* HERO */
+.hero{
+padding:200px 10% 100px;
+text-align:center;
+}
 
-.cta{padding:120px 10%;text-align:center;}
-.btn{display:inline-block;margin-top:30px;padding:14px 30px;background:linear-gradient(45deg,#00d4ff,#007bff);border-radius:10px;color:white;text-decoration:none;}
+.hero h1{
+font-size:56px;
+font-weight:800;
+}
 
-footer{text-align:center;padding:40px;opacity:.6;}
+.highlight{
+background:linear-gradient(45deg,#00d4ff,#4f8cff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero p{
+margin-top:20px;
+max-width:720px;
+margin:auto;
+font-size:18px;
+opacity:.85;
+}
+
+/* SECTION */
+.section{
+padding:100px 10%;
+text-align:center;
+}
+
+.section h2{
+font-size:40px;
+margin-bottom:20px;
+}
+
+.section p{
+max-width:760px;
+margin:auto;
+opacity:.8;
+}
+
+/* SERVICES */
+.services-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+margin-top:60px;
+}
+
+.service-card{
+background:rgba(255,255,255,0.05);
+padding:30px;
+border-radius:16px;
+border:1px solid rgba(255,255,255,0.08);
+transition:.3s;
+}
+
+.service-card:hover{
+transform:translateY(-8px);
+background:rgba(255,255,255,0.08);
+}
+
+/* PROCESS */
+.process{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:30px;
+margin-top:60px;
+}
+
+.step{
+background:#0f172a;
+padding:30px;
+border-radius:14px;
+}
+
+.step h3{
+color:#00d4ff;
+margin-bottom:10px;
+}
+
+/* CTA */
+.cta{
+padding:120px 10%;
+text-align:center;
+}
+
+.btn{
+display:inline-block;
+margin-top:30px;
+padding:14px 30px;
+background:linear-gradient(45deg,#00d4ff,#007bff);
+border-radius:10px;
+text-decoration:none;
+color:#fff;
+font-weight:600;
+}
+
+footer{
+text-align:center;
+padding:40px;
+opacity:.6;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+.mobile-toggle{display:flex;}
+
+.nav-links{
+position:fixed;
+top:80px;
+right:-100%;
+width:85%;
+flex-direction:column;
+background:rgba(17,24,39,0.95);
+backdrop-filter:blur(16px);
+border-radius:20px;
+border:1px solid rgba(255,255,255,0.1);
+padding:25px;
+gap:15px;
+transition:.3s;
+z-index:999;
+}
+
+.nav-links.nav-active{
+right:5%;
+}
+
+.nav-links li{
+padding:12px 0;
+border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+/* MOBILE DROPDOWN */
+.submenu{
+position:static;
+transform:none;
+margin-top:10px;
+opacity:1;
+visibility:visible;
+display:none;
+}
+
+.submenu.open{
+display:block;
+}
+
+.hero{
+padding:140px 6% 70px;
+}
+
+.hero h1{
+font-size:34px;
+}
+
+.section{
+padding:70px 6%;
+}
+
+}
 
 </style>
 </head>
 
 <body>
 
+<!-- NAVBAR -->
 <nav>
+
 <a href="../index.html" class="nav-logo">Network Media Inc.</a>
-<ul class="nav-links">
+
+<div class="mobile-toggle" id="mobile-toggle">
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+<ul class="nav-links" id="nav-links">
+
 <li><a href="../index.html#about">Know Us</a></li>
+
 <li class="has-submenu">
-<a href="#">What We Do ▾</a>
-<ul class="submenu">
+<a href="#" id="whatWeDoTrigger">What We Do ▾</a>
+
+<ul class="submenu" id="whatWeDoMenu">
 <li><a href="marketplace-management.html">Marketplace Management</a></li>
 <li><a href="performance-marketing.html">Performance Marketing</a></li>
 <li><a href="growth-strategy.html">Growth Strategy</a></li>
 <li><a href="business-intelligence.html">Business Intelligence</a></li>
 </ul>
+
 </li>
+
 <li><a href="../index.html#trusted">Partners</a></li>
 <li><a href="../index.html#reach">Reach Us</a></li>
+
 </ul>
+
 </nav>
 
+<!-- HERO -->
 <section class="hero">
 <h1>Performance <span class="highlight">Marketing</span></h1>
-<p>We drive measurable growth through data-driven performance marketing across digital platforms.</p>
+<p>We drive measurable growth using data-driven marketing strategies across all digital platforms.</p>
 </section>
 
+<!-- SERVICES -->
 <section class="section">
-<h2>End-to-End Performance Marketing Services</h2>
-<p>We manage campaigns to maximize ROI and scale growth.</p>
+<h2>Performance Marketing Services</h2>
 
 <div class="services-grid">
-<div class="service-card"><h3>Paid Ads</h3><p>Google & Meta Ads.</p></div>
-<div class="service-card"><h3>Strategy</h3><p>Data-driven planning.</p></div>
-<div class="service-card"><h3>Conversion</h3><p>Improve funnels.</p></div>
-<div class="service-card"><h3>Targeting</h3><p>Reach right audience.</p></div>
-<div class="service-card"><h3>Budget</h3><p>Optimize spend.</p></div>
-<div class="service-card"><h3>Analytics</h3><p>Track performance.</p></div>
+<div class="service-card"><h3>Paid Advertising</h3><p>Google, Meta & marketplace ads.</p></div>
+<div class="service-card"><h3>Campaign Strategy</h3><p>ROI-focused planning.</p></div>
+<div class="service-card"><h3>Conversion Optimization</h3><p>Improve funnel performance.</p></div>
+<div class="service-card"><h3>Audience Targeting</h3><p>Reach high intent users.</p></div>
+<div class="service-card"><h3>Budget Optimization</h3><p>Maximise returns.</p></div>
+<div class="service-card"><h3>Analytics</h3><p>Data-driven insights.</p></div>
 </div>
 </section>
 
+<!-- PROCESS -->
 <section class="section">
-<h2>Our Performance Marketing Process</h2>
+<h2>Our Process</h2>
+
 <div class="process">
-<div class="step"><h3>1. Research</h3><p>Understand audience.</p></div>
-<div class="step"><h3>2. Strategy</h3><p>Plan campaigns.</p></div>
-<div class="step"><h3>3. Execute</h3><p>Launch campaigns.</p></div>
-<div class="step"><h3>4. Optimize</h3><p>Scale performance.</p></div>
+<div class="step"><h3>1. Research</h3><p>Understand market.</p></div>
+<div class="step"><h3>2. Strategy</h3><p>Build plan.</p></div>
+<div class="step"><h3>3. Execution</h3><p>Run campaigns.</p></div>
+<div class="step"><h3>4. Scale</h3><p>Optimize & grow.</p></div>
 </div>
 </section>
 
+<!-- CTA -->
 <section class="cta">
-<h2>Ready to scale your marketing?</h2>
+<h2>Ready to scale your growth?</h2>
 <a href="mailto:network.media@hotmail.com" class="btn">Start Growing</a>
 </section>
 
 <footer>© 2026 Network Media Inc.</footer>
+
+<script>
+
+/* MOBILE MENU */
+const toggle = document.getElementById("mobile-toggle");
+const navMenu = document.getElementById("nav-links");
+
+toggle.addEventListener("click", ()=>{
+navMenu.classList.toggle("nav-active");
+});
+
+/* DROPDOWN */
+const trigger = document.getElementById("whatWeDoTrigger");
+const menu = document.getElementById("whatWeDoMenu");
+
+trigger.addEventListener("click", function(e){
+e.preventDefault();
+menu.classList.toggle("open");
+});
+
+/* CLOSE OUTSIDE */
+document.addEventListener("click", function(e){
+if(!menu.contains(e.target) && !trigger.contains(e.target)){
+menu.classList.remove("open");
+}
+});
+
+</script>
 
 </body>
 </html>
