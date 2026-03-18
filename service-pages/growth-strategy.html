@@ -1,398 +1,109 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Marketplace Management | Network Media</title>
-  <link rel="stylesheet" href="../style.css">
+<title>Growth Strategy | Network Media</title>
+<link rel="stylesheet" href="../style.css">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
-/* GLOBAL */
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Inter',sans-serif;
-}
-
-body{
-background:#0b1220;
-color:white;
-line-height:1.7;
-}
-  /* NAVBAR STYLE (HOMEPAGE SAME) */
+/* SAME CSS */
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
+body{background:#0b1220;color:white;line-height:1.7;}
 
 nav{
-position:fixed;
-top:16px;
-left:50%;
-transform:translateX(-50%);
-
-display:flex;
-align-items:center;
-justify-content:space-between;
-
-padding:12px 30px;
-gap:90px;
-
-background:rgba(15,23,42,0.55);
-backdrop-filter:blur(10px);
-
-border:1px solid rgba(255,255,255,0.12);
-border-radius:40px;
+position:fixed;top:16px;left:50%;transform:translateX(-50%);
+display:flex;align-items:center;justify-content:space-between;
+padding:12px 30px;gap:90px;
+background:rgba(15,23,42,0.55);backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,0.12);border-radius:40px;
 box-shadow:0 8px 30px rgba(0,0,0,.45);
-width:900px;
-max-width:92%;
-
-z-index:1000;
+width:900px;max-width:92%;z-index:1000;
 }
 
-.nav-links{
-display:flex;
-gap:40px;
-list-style:none;
-}
+.nav-links{display:flex;gap:40px;list-style:none;}
+.nav-links a{text-decoration:none;color:#dff9ff;font-size:14px;font-weight:500;}
+.nav-logo{font-size:16px;color:white;text-decoration:none;}
 
-  .nav-links a{
-text-decoration:none;
-color:#dff9ff;
-font-size:14px;
-font-weight:500;
-opacity:.9;
-transition:.25s ease;
-}
+.has-submenu{position:relative;}
 
-.nav-links a:hover{
-color:#ffffff;
-opacity:1;
-}
-
-  .nav-logo{
-font-size:16px;
-font-weight:500;
-letter-spacing:.3px;
-text-decoration:none;
-color:white;
-}
-/* DROPDOWN */
-
-.has-submenu{
-position:relative;
-}
-
-/* Dropdown Box */
 .submenu{
-position:absolute;
-top:120%;
-left:50%;
-transform:translateX(-50%);
-min-width:260px;
-
-background:#111827;
-border-radius:14px;
-padding:10px;
-
+position:absolute;top:120%;left:50%;transform:translateX(-50%);
+min-width:260px;background:#111827;border-radius:14px;padding:10px;
 box-shadow:0 20px 50px rgba(0,0,0,0.6);
-
-opacity:0;
-visibility:hidden;
-pointer-events:none;
-
-transition:all 0.25s ease;
+opacity:0;visibility:hidden;pointer-events:none;
+transition:.25s;
 }
 
-/* Dropdown Items */
-.submenu li{
-list-style:none;
-}
+.has-submenu:hover .submenu{opacity:1;visibility:visible;pointer-events:auto;}
+.submenu.open{opacity:1;visibility:visible;pointer-events:auto;}
 
-.submenu a{
-display:block;
-padding:10px;
-border-radius:8px;
-transition:0.2s;
-}
+.mobile-toggle{display:none;}
 
-.submenu a:hover{
-background:rgba(255,255,255,0.08);
-}
-
-/* Desktop Hover */
-.has-submenu:hover .submenu{
-opacity:1;
-visibility:visible;
-pointer-events:auto;
-}
-
-/* Mobile Click (JS controlled) */
-.submenu.open{
-opacity:1;
-visibility:visible;
-pointer-events:auto;
-}
-  /* MOBILE TOGGLE */
-.mobile-toggle{
-display:none;
-flex-direction:column;
-gap:6px;
-cursor:pointer;
-}
-
-.mobile-toggle span{
-width:22px;
-height:2px;
-background:white;
-border-radius:2px;
-}
-
-/* HERO */
-
-.hero{
-padding:100px 10% 100px;
-}
-  .hero{
+.hero{padding:200px 10% 100px;text-align:center;}
+    .hero{
 display:flex;
 flex-direction:column;
 align-items:center;
 justify-content:center;
 text-align:center;
 }
+.hero h1{font-size:56px;font-weight:800;}
+.highlight{background:linear-gradient(45deg,#00d4ff,#4f8cff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.hero p{margin-top:20px;max-width:720px;margin:auto;font-size:18px;}
 
-background:
-radial-gradient(circle at 20% 20%, #00d4ff33, transparent 40%),
-radial-gradient(circle at 80% 80%, #0066ff33, transparent 40%);
+.section{padding:100px 10%;text-align:center;}
+.section h2{font-size:40px;margin-bottom:20px;}
 
-text-align:center;
-}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:30px;margin-top:60px;}
 
-.hero h1{
-font-size:56px;
-font-weight:800;
-}
+.service-card{background:rgba(255,255,255,0.05);padding:30px;border-radius:16px;}
 
-.highlight{
-background:linear-gradient(45deg,#00d4ff,#4f8cff);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
+.process{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;margin-top:60px;}
+.step{background:#0f172a;padding:30px;border-radius:14px;}
 
-.hero p{
-margin-top:20px;
-max-width:720px;
-margin-left:auto;
-margin-right:auto;
-font-size:18px;
-opacity:.85;
-}
+.cta{padding:120px 10%;text-align:center;}
+.btn{display:inline-block;margin-top:30px;padding:14px 30px;background:linear-gradient(45deg,#00d4ff,#007bff);border-radius:10px;color:white;text-decoration:none;}
 
-/* SECTION */
+footer{text-align:center;padding:40px;opacity:.6;}
 
-.section{
-padding:100px 10%;
-text-align:center;
-}
+/* MOBILE */
+@media(max-width:768px){
 
-.section h2{
-font-size:40px;
-margin-bottom:20px;
-}
+.mobile-toggle{display:flex;flex-direction:column;gap:5px;}
+.mobile-toggle span{width:24px;height:2px;background:white;}
 
-.section p{
-max-width:760px;
-margin:auto;
-opacity:.8;
-}
-
-/* SERVICES GRID */
-
-.services-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:30px;
-margin-top:60px;
-}
-
-.service-card{
-background:rgba(255,255,255,0.05);
-padding:30px;
-border-radius:16px;
-border:1px solid rgba(255,255,255,0.08);
-transition:.3s;
-}
-
-.service-card:hover{
-transform:translateY(-8px);
-background:rgba(255,255,255,0.08);
-}
-
-.service-card h3{
-margin-top:10px;
-font-size:20px;
-}
-
-.service-card p{
-font-size:15px;
-opacity:.8;
-margin-top:10px;
-}
-
-/* PROCESS */
-
-.process{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:30px;
-margin-top:60px;
-}
-
-.step{
-background:#0f172a;
-padding:30px;
-border-radius:14px;
-}
-
-.step h3{
-color:#00d4ff;
-margin-bottom:10px;
-}
-
-/* CTA */
-
-.cta{
-padding:120px 10%;
-text-align:center;
-}
-
-.btn{
-display:inline-block;
-margin-top:30px;
-padding:14px 30px;
-background:linear-gradient(45deg,#00d4ff,#007bff);
-border-radius:10px;
-text-decoration:none;
-color:white;
-font-weight:600;
-}
-
-footer{
-text-align:center;
-padding:40px;
-opacity:.6;
-}
-
-/* MOBILE RESPONSIVE */
-
-@media (max-width:768px){
-.submenu{
-position:static;
-transform:none;
-margin-top:8px;
-width:100%;
-}
-
-.hero{
-padding:140px 6% 70px;
-}
-
-.hero h1{
-font-size:34px;
-}
-  .hero h1{
-line-height:1.2;
-letter-spacing:-1px;
-}
-
-.hero p{
-font-size:16px;
-}
-
-.section{
-padding:70px 6%;
-}
-
-.section h2{
-font-size:28px;
-}
-
-.services-grid{
-grid-template-columns:1fr;
-}
-
-.process{
-grid-template-columns:1fr;
-}
-
-.cta{
-padding:80px 6%;
-}
-  /* MOBILE NAV DRAWER FIX */
 .nav-links{
-display:flex;
-flex-direction:column;
-
-position:fixed;
-top:70px;
-right:-100%;
-left:auto;   /* ⭐ THIS FIX */
-
-width:90%;
-
-background:rgba(17,24,39,0.95);
-backdrop-filter:blur(16px);
-
-border-radius:22px;
-border:1px solid rgba(255,255,255,0.08);
-
-padding:30px 24px 40px;
-gap:16px;
-
-transition:0.4s ease;
-z-index:9998;
+position:fixed;top:80px;right:-100%;width:85%;
+flex-direction:column;background:rgba(17,24,39,0.95);
+padding:25px;transition:.3s;
 }
 
-  .submenu{
-display:none;
-}
+.nav-links.nav-active{right:5%;}
 
-.submenu.open{
-display:block;
-}
-.nav-links.nav-active{
-right:5%;
-}
-  .mobile-toggle{
-display:flex;
-}
+.submenu{position:static;display:none;}
+.submenu.open{display:block;}
 
-.nav-links li{
-padding:14px 0;
-border-bottom:1px solid rgba(255,255,255,0.15);
-}
+.hero{padding:140px 6%;}
+.hero h1{font-size:34px;}
 
 }
 
 </style>
-
 </head>
 
 <body>
 
-<!-- NAVBAR -->
 <nav>
-
 <a href="../index.html" class="nav-logo">Network Media Inc.</a>
 
 <div class="mobile-toggle" id="mobile-toggle">
-<span></span>
-<span></span>
+<span></span><span></span><span></span>
 </div>
 
 <ul class="nav-links" id="nav-links">
@@ -400,18 +111,13 @@ border-bottom:1px solid rgba(255,255,255,0.15);
 <li><a href="../index.html#about">Know Us</a></li>
 
 <li class="has-submenu">
-
-<a href="#" id="whatWeDoTrigger" style="display:flex;align-items:center;gap:6px;">
-What We Do <span>▾</span>
-</a>
+<a href="#" id="whatWeDoTrigger">What We Do ▾</a>
 
 <ul class="submenu" id="whatWeDoMenu">
-
 <li><a href="marketplace-management.html">Marketplace Management</a></li>
 <li><a href="performance-marketing.html">Performance Marketing</a></li>
 <li><a href="growth-strategy.html">Growth Strategy</a></li>
 <li><a href="business-intelligence.html">Business Intelligence</a></li>
-
 </ul>
 
 </li>
@@ -420,155 +126,53 @@ What We Do <span>▾</span>
 <li><a href="../index.html#reach">Reach Us</a></li>
 
 </ul>
-
 </nav>
 
-<!-- HERO -->
-
 <section class="hero">
-
-<h1>Marketplace <span class="highlight">Management</span></h1>
-
-<p>
-We help brands launch, manage and scale across Amazon, Flipkart, Myntra, Nykaa and global marketplaces using data-driven ecommerce strategies.
-</p>
-
+<h1>Growth <span class="highlight">Strategy</span></h1>
+<p>We help brands scale with structured growth strategies across channels.</p>
 </section>
 
-<!-- SERVICES -->
-
 <section class="section">
-
-<h2>End-to-End Marketplace Services</h2>
-
-<p>
-From launching your brand to scaling marketplace sales, our team manages every aspect of ecommerce operations.
-</p>
+<h2>Growth Strategy Services</h2>
 
 <div class="services-grid">
-
-<div class="service-card">
-<h3>Marketplace Launch</h3>
-<p>Account setup, onboarding and brand registry across marketplaces.</p>
+<div class="service-card"><h3>Market Analysis</h3></div>
+<div class="service-card"><h3>Business Planning</h3></div>
+<div class="service-card"><h3>Channel Strategy</h3></div>
+<div class="service-card"><h3>Revenue Optimization</h3></div>
+<div class="service-card"><h3>Customer Journey</h3></div>
+<div class="service-card"><h3>Scaling Strategy</h3></div>
 </div>
-
-<div class="service-card">
-<h3>Catalog Optimization</h3>
-<p>SEO-optimized product listings designed to increase conversions.</p>
-</div>
-
-<div class="service-card">
-<h3>Advertising Management</h3>
-<p>Amazon Ads and marketplace advertising for profitable growth.</p>
-</div>
-
-<div class="service-card">
-<h3>Pricing Strategy</h3>
-<p>Competitive pricing strategies to improve visibility and sales.</p>
-</div>
-
-<div class="service-card">
-<h3>Inventory Planning</h3>
-<p>Demand forecasting and inventory management.</p>
-</div>
-
-<div class="service-card">
-<h3>Review Management</h3>
-<p>Improve ratings and build trust through reputation management.</p>
-</div>
-
-</div>
-
 </section>
-
-<!-- PROCESS -->
 
 <section class="section">
-
-<h2>Our Marketplace Growth Process</h2>
+<h2>Our Process</h2>
 
 <div class="process">
-
-<div class="step">
-<h3>1. Audit</h3>
-<p>Analyze marketplace performance and competitors.</p>
+<div class="step"><h3>1. Diagnose</h3></div>
+<div class="step"><h3>2. Plan</h3></div>
+<div class="step"><h3>3. Execute</h3></div>
+<div class="step"><h3>4. Scale</h3></div>
 </div>
-
-<div class="step">
-<h3>2. Strategy</h3>
-<p>Create a customised ecommerce growth strategy.</p>
-</div>
-
-<div class="step">
-<h3>3. Execution</h3>
-<p>Implement catalog optimization and ads.</p>
-</div>
-
-<div class="step">
-<h3>4. Scale</h3>
-<p>Expand across marketplaces and increase revenue.</p>
-</div>
-
-</div>
-
 </section>
-
-<!-- CTA -->
 
 <section class="cta">
-
-<h2>Ready to grow your marketplace sales?</h2>
-
+<h2>Ready to grow your business?</h2>
 <a href="mailto:network.media@hotmail.com" class="btn">Start Growing</a>
-
 </section>
 
-<footer>
-© 2026 Network Media Inc.
-</footer>
+<footer>© 2026 Network Media Inc.</footer>
 
 <script>
+const toggle=document.getElementById("mobile-toggle");
+const navMenu=document.getElementById("nav-links");
+toggle.onclick=()=>navMenu.classList.toggle("nav-active");
 
-/* ===== DROPDOWN ===== */
+const trigger=document.getElementById("whatWeDoTrigger");
+const menu=document.getElementById("whatWeDoMenu");
 
-const trigger = document.getElementById("whatWeDoTrigger");
-const menu = document.getElementById("whatWeDoMenu");
-
-if(trigger && menu){
-
-trigger.addEventListener("click",function(e){
-e.preventDefault();
-menu.classList.toggle("open");
-});
-
-document.addEventListener("click",function(e){
-if(!menu.contains(e.target) && !trigger.contains(e.target)){
-menu.classList.remove("open");
-}
-});
-
-}
-
-/* ===== MOBILE NAV TOGGLE ===== */
-
-const toggle = document.getElementById("mobile-toggle");
-const navMenu = document.getElementById("nav-links");
-
-if(toggle && navMenu){
-
-toggle.addEventListener("click", ()=>{
-navMenu.classList.toggle("nav-active");
-});
-
-document.querySelectorAll("#nav-links a").forEach(link=>{
-link.addEventListener("click", ()=>{
-if(link.closest('.has-submenu')) return;
-navMenu.classList.remove("nav-active");
-});
-});
-
-}
-
+trigger.onclick=(e)=>{e.preventDefault();menu.classList.toggle("open");};
 </script>
 
 </body>
