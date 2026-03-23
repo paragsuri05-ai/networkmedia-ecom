@@ -119,17 +119,17 @@ height:2px;
 background:#fff;
 }
 
-/* HERO */
+/* HERO (FIXED CLEAN LIKE GROWTH STRATEGY) */
 .hero{
 padding:200px 10% 100px;
-text-align:center;
-}
-    .hero{
+
 display:flex;
 flex-direction:column;
 align-items:center;
 justify-content:center;
 text-align:center;
+
+background:none;   /* ⭐ FIX */
 }
 
 .hero h1{
@@ -261,13 +261,10 @@ padding:12px 0;
 border-bottom:1px solid rgba(255,255,255,0.1);
 }
 
-/* MOBILE DROPDOWN */
 .submenu{
 position:static;
 transform:none;
 margin-top:10px;
-opacity:1;
-visibility:visible;
 display:none;
 }
 
@@ -340,38 +337,14 @@ padding:70px 6%;
 
 <div class="services-grid">
 
-<div class="service-card">
-<h3>Data Analytics</h3>
-<p>Analyze large datasets to uncover insights and trends.</p>
-</div>
-
-<div class="service-card">
-<h3>Dashboard Creation</h3>
-<p>Custom dashboards for real-time performance tracking.</p>
-</div>
-
-<div class="service-card">
-<h3>Reporting</h3>
-<p>Automated reports for business visibility.</p>
-</div>
-
-<div class="service-card">
-<h3>KPI Tracking</h3>
-<p>Track key metrics and performance indicators.</p>
-</div>
-
-<div class="service-card">
-<h3>Forecasting</h3>
-<p>Predict trends and future growth opportunities.</p>
-</div>
-
-<div class="service-card">
-<h3>Decision Support</h3>
-<p>Enable smarter, data-driven decisions.</p>
-</div>
+<div class="service-card"><h3>Data Analytics</h3><p>Analyze large datasets to uncover insights and trends.</p></div>
+<div class="service-card"><h3>Dashboard Creation</h3><p>Custom dashboards for real-time performance tracking.</p></div>
+<div class="service-card"><h3>Reporting</h3><p>Automated reports for business visibility.</p></div>
+<div class="service-card"><h3>KPI Tracking</h3><p>Track key metrics and performance indicators.</p></div>
+<div class="service-card"><h3>Forecasting</h3><p>Predict trends and future growth opportunities.</p></div>
+<div class="service-card"><h3>Decision Support</h3><p>Enable smarter, data-driven decisions.</p></div>
 
 </div>
-
 </section>
 
 <!-- PROCESS -->
@@ -379,27 +352,10 @@ padding:70px 6%;
 <h2>Our BI Process</h2>
 
 <div class="process">
-
-<div class="step">
-<h3>1. Collect</h3>
-<p>Gather data from multiple sources.</p>
-</div>
-
-<div class="step">
-<h3>2. Analyze</h3>
-<p>Identify patterns and insights.</p>
-</div>
-
-<div class="step">
-<h3>3. Visualize</h3>
-<p>Create dashboards and reports.</p>
-</div>
-
-<div class="step">
-<h3>4. Act</h3>
-<p>Implement insights for growth.</p>
-</div>
-
+<div class="step"><h3>1. Collect</h3><p>Gather data from multiple sources.</p></div>
+<div class="step"><h3>2. Analyze</h3><p>Identify patterns and insights.</p></div>
+<div class="step"><h3>3. Visualize</h3><p>Create dashboards and reports.</p></div>
+<div class="step"><h3>4. Act</h3><p>Implement insights for growth.</p></div>
 </div>
 
 </section>
@@ -410,35 +366,44 @@ padding:70px 6%;
 <a href="mailto:network.media@hotmail.com" class="btn">Start Growing</a>
 </section>
 
-<footer>
-© 2026 Network Media Inc.
-</footer>
+<footer>© 2026 Network Media Inc.</footer>
 
 <script>
-
-/* MOBILE MENU */
-const toggle = document.getElementById("mobile-toggle");
-const navMenu = document.getElementById("nav-links");
-
-toggle.addEventListener("click", ()=>{
-navMenu.classList.toggle("nav-active");
-});
 
 /* DROPDOWN */
 const trigger = document.getElementById("whatWeDoTrigger");
 const menu = document.getElementById("whatWeDoMenu");
 
+if(trigger && menu){
 trigger.addEventListener("click", function(e){
 e.preventDefault();
+e.stopPropagation();
 menu.classList.toggle("open");
 });
 
-/* CLOSE OUTSIDE */
 document.addEventListener("click", function(e){
 if(!menu.contains(e.target) && !trigger.contains(e.target)){
 menu.classList.remove("open");
 }
 });
+}
+
+/* MOBILE NAV */
+const toggle = document.getElementById("mobile-toggle");
+const navMenu = document.getElementById("nav-links");
+
+if(toggle && navMenu){
+toggle.addEventListener("click", ()=>{
+navMenu.classList.toggle("nav-active");
+});
+
+document.querySelectorAll("#nav-links a").forEach(link=>{
+link.addEventListener("click", ()=>{
+if(link.closest('.has-submenu')) return;
+navMenu.classList.remove("nav-active");
+});
+});
+}
 
 </script>
 
