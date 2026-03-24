@@ -470,18 +470,18 @@ animation:marqueeloop 14s linear infinite;
 /* logos */
 .logos-track{
 display:flex;
-align-items:center;   /* ⭐ vertical alignment fix */
-gap:80px;
+align-items:center;
+gap:70px;
 }
 
-/* ⭐ FINAL LOGO FIX */
+/* ⭐ BALANCED FIX */
 .logos-track img{
-height:40px;
-width:120px;          /* ⭐ same width for all */
-object-fit:contain;   /* ⭐ no distortion */
-flex-shrink:0;
+height:48px;          /* ⭐ size bada */
+width:auto;           /* ⭐ original proportion */
+max-width:140px;      /* ⭐ control wide logos */
 
-padding:6px 10px;     /* ⭐ spacing inside */
+object-fit:contain;
+flex-shrink:0;
 
 filter:brightness(0) invert(1);
 opacity:.9;
