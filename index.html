@@ -468,12 +468,23 @@ animation:marqueeloop 14s linear infinite;
 
 
 /* logos */
+.logos-track{
+display:flex;
+align-items:center;   /* ⭐ vertical alignment fix */
+gap:80px;
+}
+
+/* ⭐ FINAL LOGO FIX */
 .logos-track img{
 height:40px;
-width:auto;
+width:120px;          /* ⭐ same width for all */
+object-fit:contain;   /* ⭐ no distortion */
 flex-shrink:0;
+
+padding:6px 10px;     /* ⭐ spacing inside */
+
 filter:brightness(0) invert(1);
-opacity:1;
+opacity:.9;
 transition:.3s;
 }
 
