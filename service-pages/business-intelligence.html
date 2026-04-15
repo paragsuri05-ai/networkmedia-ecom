@@ -305,19 +305,7 @@ padding:70px 6%;
 <ul class="nav-links" id="nav-links">
 
 <li><a href="../index.html#about">Know Us</a></li>
-
-<li class="has-submenu">
-<a href="#" id="whatWeDoTrigger">What We Do ▾</a>
-
-<ul class="submenu" id="whatWeDoMenu">
-<li><a href="marketplace-management.html">Marketplace Management</a></li>
-<li><a href="performance-marketing.html">Performance Marketing</a></li>
-<li><a href="growth-strategy.html">Growth Strategy</a></li>
-<li><a href="business-intelligence.html">Business Intelligence</a></li>
-</ul>
-
-</li>
-
+  <li><a href="../index.html#services">What We Do</a></li>
 <li><a href="../index.html#trusted">Partners</a></li>
 <li><a href="../index.html#reach">Reach Us</a></li>
 
@@ -370,24 +358,6 @@ padding:70px 6%;
 
 <script>
 
-/* DROPDOWN */
-const trigger = document.getElementById("whatWeDoTrigger");
-const menu = document.getElementById("whatWeDoMenu");
-
-if(trigger && menu){
-trigger.addEventListener("click", function(e){
-e.preventDefault();
-e.stopPropagation();
-menu.classList.toggle("open");
-});
-
-document.addEventListener("click", function(e){
-if(!menu.contains(e.target) && !trigger.contains(e.target)){
-menu.classList.remove("open");
-}
-});
-}
-
 /* MOBILE NAV */
 const toggle = document.getElementById("mobile-toggle");
 const navMenu = document.getElementById("nav-links");
@@ -398,10 +368,9 @@ navMenu.classList.toggle("nav-active");
 });
 
 document.querySelectorAll("#nav-links a").forEach(link=>{
-link.addEventListener("click", ()=>{
-if(link.closest('.has-submenu')) return;
-navMenu.classList.remove("nav-active");
-});
+  link.addEventListener("click", ()=>{
+    navMenu.classList.remove("nav-active");
+  });
 });
 }
 
